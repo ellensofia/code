@@ -1,0 +1,117 @@
+@use "../components/links" as link;
+@use "../tools/responsive";
+
+.menu {
+  transform: translateX(-150%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  &--open {
+    background-color: var(--color-bg);
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: 0.4s ease;
+
+    z-index: 81;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+  }
+
+  &__item {
+    transition-duration: 0.4s;
+    transform: translateY(-3rem);
+    opacity: 0;
+
+    &:nth-of-type(1) {
+      transition-delay: 0.3s;
+    }
+    &:nth-of-type(2) {
+      transition-delay: 0.55s;
+    }
+    &:nth-of-type(3) {
+      transition-delay: 0.75s;
+    }
+  }
+
+  &--open .menu__list .menu__item {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &--open .menu__link {
+    opacity: 1;
+    font-size: var(--font-size-5);
+
+    @include responsive.max(45em) {
+      font-size: var(--font-size-4);
+    }
+
+    @include responsive.max(30em) {
+      font-size: var(--font-size-3);
+    }
+  }
+
+  &__link {
+    @include link.standard;
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  // transition: <property> || <duration> || <timing-function> || <delay> [, ...];
+  &__btn {
+    width: 2.2rem;
+    height: 2.5rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transition: 0.4s ease;
+  }
+
+  &__burger {
+    width: 2.2rem;
+    height: 0.25rem;
+    background-color: var(--color-primary);
+    position: relative;
+    top: 0.2rem;
+    transition: background-color 0.4s ease;
+    transition: 0.2s ease;
+
+    &::after,
+    &::before {
+      content: "";
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+      position: absolute;
+      left: 0;
+      top: 0.8rem;
+    }
+
+    &::after {
+      top: -0.8rem;
+    }
+
+    &--open {
+      rotate: 45deg;
+
+      &::before,
+      &::after {
+        top: 0;
+        rotate: 90deg;
+      }
+    }
+  }
+}

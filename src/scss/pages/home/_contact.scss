@@ -1,0 +1,85 @@
+@use "../../components/links" as link;
+@use "../../tools/responsive";
+
+.contact {
+  &__inner {
+    flex-direction: column;
+    position: relative;
+    padding-left: var(--section-inner-gap-xsmall);
+    transition: 0.3s 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0.25rem;
+      height: 100%;
+      left: 0;
+      opacity: 6;
+      background-color: var(--color-primary);
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-inner-gap-xsmall);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: var(--font-size-1);
+    @include link.standard;
+    padding-bottom: 0.4rem;
+    width: fit-content;
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  &__linkedin {
+    height: 2.4rem;
+  }
+
+  &__mail {
+    width: 2.4rem;
+  }
+
+  &__phone {
+    height: 2.8rem;
+  }
+
+  &__title {
+    margin-bottom: var(--section-inner-gap-xsmall);
+  }
+
+  @include responsive.max(35em) {
+    .contact {
+      &__inner {
+        padding: 0;
+        &::after {
+          display: none;
+        }
+      }
+      &__link {
+        gap: 1rem;
+        white-space: nowrap;
+
+        & span {
+          font-size: 1.4rem;
+        }
+      }
+      &__linkedin {
+        height: 2rem;
+      }
+
+      &__mail {
+        width: 1.8rem;
+      }
+
+      &__phone {
+        height: 2.2rem;
+      }
+    }
+  }
+}

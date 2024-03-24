@@ -1,0 +1,29 @@
+@use '../tools/responsive';
+
+.footer {
+
+    &__inner {
+        justify-content: center;
+    }
+
+    &__copyright {
+        opacity: 0.8;
+        text-align: center;
+        padding: var(--section-inner-gap-xsmall);
+        font-size: var(--color-primary);
+        font-size: var(--font-size-1);
+
+        @include responsive.max(40em) {
+            padding: 2rem;
+            padding-top: 0;
+        }
+    }
+
+
+    @include responsive.max(35em) { 
+        & span {
+            font-size: 1.4rem;
+        }
+    }
+
+}

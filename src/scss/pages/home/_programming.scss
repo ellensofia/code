@@ -1,0 +1,66 @@
+@use '../../tools/responsive';
+@use '../../tools/variables';
+
+.programming {
+    min-width: 50vw;
+
+    &__columns {
+        display: flex;
+        gap: var(--section-inner-gap-small);
+        flex-wrap: wrap;
+    }    
+
+    &__column {
+        line-height: 1.5;
+    }
+
+    &__title {
+        max-width: 44vw;
+    }
+
+    &__item {
+        padding-bottom: 1rem;
+        font-weight: 400;
+    }
+
+    &__inner {
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: var(--section-inner-gap-xsmall);
+    }
+
+    &__text {
+        margin-bottom: var(--section-inner-gap-xsmall);
+    }
+    
+    @include responsive.max(60em) {
+
+        &__title {
+            max-width: 70vw;
+        }
+
+        &__text {
+            max-width: 70vw;
+        }
+
+        &__list {
+            justify-content: center;
+        }
+    }
+
+    @include responsive.max(40em) {
+        &__columns {
+            gap: var(--section-inner-gap-xsmall);
+        }
+
+        &__text {
+            max-width: 70vw;
+        }
+
+        &__list {
+            justify-content: center;
+        }
+    }
+}

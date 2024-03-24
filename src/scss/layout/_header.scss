@@ -1,0 +1,81 @@
+@use "../tools/responsive";
+
+.header {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  z-index: 100;
+  background-color: var(--color-bg);
+
+  &__inner {
+    width: 100%;
+    align-items: center;
+    height: var(--header-height);
+  }
+
+  &__right {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .darkmode {
+    height: 24px;
+    z-index: 100;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+
+  .darkmode,
+  &__github-icon,
+  .language-button {
+    transition: 0.4s ease;
+  }
+
+  &__github-icon {
+    height: 2.4rem;
+  }
+}
+
+.language-button {
+  color: var(--color-title);
+  font-size: var(--font-size-1);
+  white-space: nowrap;
+  z-index: 100;
+  margin-top: 0.2rem;
+
+  .sv-btn {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "/";
+      padding-left: 0.2rem;
+    }
+  }
+
+  .en-btn {
+    padding-left: 0.8rem;
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+
+  .lang--active {
+    font-weight: 700;
+  }
+}
+
+@include responsive.max(60em) {
+  .header {
+    &__right {
+      gap: 2rem;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use '../tools/responsive';
+
+// Basic layout for the site
+.hero, .header, .about, .contact, .footer {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // Changes left and right margins of the grid container on smaller screens
+    @include responsive.max(40em) {
+        grid-template-columns: var(--grid-container-small);
+    }
+
+    @include responsive.max(350px) {
+        grid-template-columns: var(--grid-container-xsmall);
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: var(--grid-container-projects);
+
+    &__inner {
+        grid-column: 2/4;
+    }
+
+    @include responsive.max(40em) {
+        grid-template-columns: var(--grid-container-projects-small);
+    }
+
+    @include responsive.max(350px) {
+        grid-template-columns: var(--grid-container-projects-xsmall);
+    }
+}
+
+section {
+    margin-bottom: var(--section-gap);
+
+    @include responsive.max(40em) {
+        margin-bottom: var(--section-inner-gap-small);
+    }
+}

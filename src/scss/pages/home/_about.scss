@@ -1,0 +1,79 @@
+@use "../../tools/responsive";
+
+.about {
+  &__inner {
+    align-items: flex-start;
+    gap: var(--section-inner-gap-small);
+    transition: 0.9s ease;
+    flex-wrap: wrap;
+    position: relative;
+    padding-left: var(--section-inner-gap-xsmall);
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 1;
+      width: 0.25rem;
+      height: 100%;
+      left: 0;
+      top: 0px;
+      background-color: var(--color-primary);
+    }
+  }
+
+  &__img {
+    width: 25vw;
+    height: auto;
+    object-fit: contain;
+    max-width: 30rem;
+    min-width: 15rem;
+    margin-bottom: var(--section-inner-gap-small);
+  }
+
+  &__copy {
+    width: 40vw;
+    max-width: 600px;
+
+    &__title {
+      margin: 2rem 0;
+    }
+  }
+
+  // 961px
+  @include responsive.max(60em) {
+    &__inner {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__copy {
+      margin-bottom: var(--section-inner-gap-small);
+      width: 70vw;
+    }
+
+    &__work-text {
+      margin-bottom: 0;
+    }
+
+    &__img {
+      width: auto;
+    }
+  }
+
+  @include responsive.max(45em) {
+    &__copy {
+      width: 100%;
+    }
+
+    &__img {
+      max-width: 21rem;
+    }
+  }
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -18rem;
+  visibility: hidden;
+}
