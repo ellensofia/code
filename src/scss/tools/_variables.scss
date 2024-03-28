@@ -24,7 +24,7 @@
   --font-serif: serif;
   --font-sans: "Libre Franklin", sans-serif;
   --font-base: 1.6rem;
-  --font-scale: 1.33;
+  --font-scale: 1.45;
   --line-height: 1.5;
 
   --font-size-1: var(--font-base); // 18px
@@ -36,14 +36,15 @@
   --font-size-hero: calc(var(--font-size-6) * var(--font-scale)); // 99.6px
 
   // Colors
-  --color-primary: rgb(26, 26, 26);
-  --color-accent: #f29a36;
+  --color-primary: #1a1a1a;
+  --color-accent: #999999;
   --color-bg: #f7f7f7;
 }
 
 // Darkmode colors
 html.darkmode {
   --color-primary: rgb(209, 215, 219);
+  --color-accent: rgb(166, 166, 166);
   --color-bg: #212121;
 }
 
@@ -51,6 +52,15 @@ p,
 a,
 span {
   line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
 }
 
 // Change margins on smaller screens

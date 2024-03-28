@@ -9,13 +9,6 @@ html {
   font-size: 10px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  transition: 0.4s ease;
-}
-
-header,
 h1,
 h2,
 h3,
@@ -23,8 +16,19 @@ h4,
 h5,
 h6,
 p,
-span {
-  transition: 0.4s ease;
+span,
+img,
+div,
+a {
+  transition: 0.15s ease;
+}
+
+body,
+header,
+nav {
+  margin: 0;
+  padding: 0;
+  transition: 0.55s ease-in-out;
 }
 
 img {

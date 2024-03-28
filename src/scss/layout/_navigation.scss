@@ -2,47 +2,51 @@
 @use "../tools/responsive";
 
 .menu {
-  transform: translateX(-150%);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
+  width: 100%;
+  position: absolute;
+  display: none;
+  z-index: 81;
   top: 0;
   height: 100%;
-  width: 100%;
+  overflow: hidden;
 
   &--open {
     background-color: var(--color-bg);
+    display: grid;
+    position: absolute;
+    z-index: 82;
+    width: 100dvw;
+    height: 100dvh;
     top: 0;
-    left: 0;
-    transform: translateX(0);
-    transition: 0.4s ease;
-
-    z-index: 81;
+    bottom: 0;
+    grid-template-columns: var(--grid-container);
   }
 
   &__list {
+    grid-column: inner;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
-    gap: 5vh;
+    gap: 2rem;
   }
 
   &__item {
     transition-duration: 0.4s;
     transform: translateY(-3rem);
     opacity: 0;
-
+    line-height: 1.2;
     &:nth-of-type(1) {
-      transition-delay: 0.3s;
+      transition-delay: 0.25s;
     }
     &:nth-of-type(2) {
-      transition-delay: 0.55s;
+      transition-delay: 0.5s;
     }
     &:nth-of-type(3) {
       transition-delay: 0.75s;
+    }
+    a {
+      font-weight: 400;
+      display: flex;
     }
   }
 
@@ -53,11 +57,16 @@
 
   &--open .menu__link {
     opacity: 1;
-    font-size: var(--font-size-5);
+    font-size: var(--font-size-6);
+    transition: 0.1s;
 
-    @include responsive.max(45em) {
-      font-size: var(--font-size-4);
+    @include responsive.max(55em) {
+      font-size: var(--font-size-5);
     }
+
+    /*     @include responsive.max(45em) {
+      font-size: var(--font-size-4);
+    } */
 
     @include responsive.max(30em) {
       font-size: var(--font-size-3);
@@ -77,16 +86,16 @@
     z-index: 100;
     display: flex;
     align-items: center;
-    transition: 0.4s ease;
   }
 
-  &__burger {
+  &__burger,
+  &__burger--open {
     width: 2.2rem;
     height: 0.25rem;
     background-color: var(--color-primary);
     position: relative;
     top: 0.2rem;
-    transition: background-color 0.4s ease;
+    transition: background-color 0.15s ease;
     transition: 0.2s ease;
 
     &::after,
