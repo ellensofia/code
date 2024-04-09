@@ -3,17 +3,16 @@
 
 .menu {
   width: 100%;
-  position: absolute;
   display: none;
   z-index: 81;
   top: 0;
   height: 100%;
-  overflow: hidden;
 
   &--open {
     background-color: var(--color-bg);
     display: grid;
-    position: absolute;
+    position: fixed;
+    top: 0;
     z-index: 82;
     width: 100dvw;
     height: 100dvh;
@@ -64,9 +63,9 @@
       font-size: var(--font-size-5);
     }
 
-    /*     @include responsive.max(45em) {
+    @include responsive.max(45em) {
       font-size: var(--font-size-4);
-    } */
+    }
 
     @include responsive.max(30em) {
       font-size: var(--font-size-3);
@@ -81,22 +80,23 @@
 
   // transition: <property> || <duration> || <timing-function> || <delay> [, ...];
   &__btn {
-    width: 2.2rem;
-    height: 2.5rem;
     z-index: 100;
     display: flex;
     align-items: center;
+    width: 2.75rem;
+    height: 3rem;
   }
 
   &__burger,
   &__burger--open {
-    width: 2.2rem;
+    width: 2.75rem;
     height: 0.25rem;
     background-color: var(--color-primary);
     position: relative;
     top: 0.2rem;
     transition: background-color 0.15s ease;
     transition: 0.2s ease;
+    margin-top: var(--grid-size);
 
     &::after,
     &::before {
@@ -106,11 +106,15 @@
       background-color: inherit;
       position: absolute;
       left: 0;
-      top: 0.8rem;
+      top: 1rem;
+    }
+
+    &::before {
+      width: 2rem;
     }
 
     &::after {
-      top: -0.8rem;
+      top: -1rem;
     }
 
     &--open {
@@ -120,6 +124,10 @@
       &::after {
         top: 0;
         rotate: 90deg;
+      }
+
+      &::before {
+        display: none;
       }
     }
   }

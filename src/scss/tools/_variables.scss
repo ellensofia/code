@@ -20,9 +20,11 @@
     [inner-end] minmax(1.5rem, 1fr);
   --header-height: 6.85rem;
 
+  font-family: "PPMori";
+
   // Fonts
   --font-serif: serif;
-  --font-sans: "Libre Franklin", sans-serif;
+  --font-sans: "PPMori", sans-serif;
   --font-base: 1.6rem;
   --font-scale: 1.45;
   --line-height: 1.5;
@@ -61,6 +63,7 @@ h4,
 h5,
 h6 {
   line-height: 1.1;
+  font-weight: 200;
 }
 
 // Change margins on smaller screens
