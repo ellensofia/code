@@ -2,11 +2,11 @@
 
 .header {
   position: fixed;
+  top: 0;
   width: 100%;
   align-items: center;
   z-index: 100;
-  background-color: var(--color-bg);
-  box-shadow: 0px 30px 50px var(--color-bg);
+  // background-color: var(--color-bg);
 
   &__inner {
     width: 100%;
@@ -16,7 +16,8 @@
   a {
     text-transform: uppercase;
     font-size: var(--font-size-2);
-    font-weight: 600;
+    font-weight: 100;
+    z-index: 110;
   }
 
   &__left {
@@ -24,6 +25,7 @@
     display: flex;
     gap: 2.5rem;
     align-items: center;
+    z-index: 110;
   }
 
   &__right {
@@ -35,6 +37,7 @@
   button {
     background-color: transparent;
     border: none;
+    z-index: 110;
   }
 
   .darkmode {
@@ -46,13 +49,18 @@
   &__github-icon {
     height: 2.4rem;
   }
+
+  a {
+    font-size: var(--font-size-1);
+    text-transform: none;
+  }
 }
 
 .language-button {
   color: var(--color-title);
   font-size: var(--font-size-1);
   white-space: nowrap;
-  z-index: 100;
+  z-index: 110;
   margin-top: 0.2rem;
 
   .sv-btn {
