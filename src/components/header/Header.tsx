@@ -1,8 +1,6 @@
 import { useState } from "react";
-import darkmodeIcon from "../../assets/icons/darkmode.svg";
-import githubDark from "../../assets/icons/github-white.svg";
-import github from "../../assets/icons/github.svg";
-import lightmodeIcon from "../../assets/icons/lightmode.svg";
+/* import githubDark from "../../assets/icons/github-white.svg";
+import github from "../../assets/icons/github.svg"; */
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "../../context/TranslationContext";
 import Menu from "../menu/Menu";
@@ -20,25 +18,15 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header__inner">
-          <button onClick={toggleDarkmode}>
-            <img
-              src={isDarkmode ? lightmodeIcon : darkmodeIcon}
-              alt="sun icon"
-              className="darkmode"
-              id="darkmode"
-            />
-          </button>
-
-          <div className="header__right">
+          <div className="header__left">
+            <button onClick={toggleDarkmode}>
+              <span>{isDarkmode ? "Dark" : "Light"}</span>
+            </button>
             <a
               href="https://github.com/ellensofia"
               className="header__github-link"
             >
-              <img
-                src={isDarkmode ? githubDark : github}
-                alt="icon github"
-                className="header__github-icon"
-              />
+              Github
             </a>
 
             <div className="language-button btn">
@@ -60,7 +48,9 @@ export default function Header() {
                 EN
               </span>
             </div>
+          </div>
 
+          <div className="header__right">
             <div className="menu__btn btn" onClick={toggleMenu}>
               <div
                 className={menuOpen ? "menu__burger--open" : "menu__burger"}
