@@ -8,14 +8,18 @@ export default function Draw() {
   const [prevCursorPosition, setPrevCursorPosition] =
     useState<ICursorPosition | null>(null);
   const [drawnPoints, setDrawnPoints] = useState<ICursorPosition[]>([]);
-  const [width, setWidth] = useState(window.innerWidth * 0.3);
-  const [height, setHeight] = useState(window.innerWidth * 0.3);
+  const [width, setWidth] = useState(window.innerWidth * 0.23);
+  const [height, setHeight] = useState(window.innerWidth * 0.23);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [backgroundColor, setBackgroundColor] = useState("var(--color-bg)");
   let animationFrameId: number;
+  const colors = ["#70d3d3", "#99FFFF", "#66CCCC", "#33CCCC", "#00CCCC"];
+  const [color, setColor] = useState(colors[0]);
 
   useEffect(() => {
     const handleResize = () => {
-      setHeight(window.innerWidth * 0.8);
-      setWidth(window.innerWidth * 0.8);
+      setHeight(window.innerWidth * 0.23);
+      setWidth(window.innerWidth * 0.23);
     };
 
     window.addEventListener("resize", handleResize);
@@ -25,8 +29,32 @@ export default function Draw() {
     };
   }, []);
 
+  let activeColor = 0;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onMouseMove = (e: MouseEvent) => {
+    drawPoint();
     setCursorPosition({ x: e.clientX, y: e.clientY });
+
+    if (drawnPoints.length > 4) {
+      //activeColor++;
+      const randomI = Math.floor(Math.random() * 5);
+      setColor(colors[randomI]);
+
+      //setColor(colors[activeColor]);
+
+      if (colors.length - 1 > activeColor) {
+        console.log(
+          "if true, colors.length: " +
+            colors.length +
+            "activeColor: " +
+            activeColor
+        );
+        // setColor(colors[activeColor]);
+      } else {
+        activeColor = 0;
+        setColor(colors[activeColor]);
+      }
+    }
   };
 
   useEffect(() => {
@@ -35,7 +63,7 @@ export default function Draw() {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, []);
+  }, [onMouseMove]);
 
   const drawPoint = () => {
     if (prevCursorPosition && cursorPosition) {
@@ -45,11 +73,13 @@ export default function Draw() {
         setDrawnPoints((prevPoints) => [...prevPoints, cursorPosition]);
       }
     }
+    if (drawnPoints.length > 460) {
+      console.log("mer än 10");
+      setDrawnPoints([]);
+    }
     setPrevCursorPosition(cursorPosition);
-    requestAnimationFrame(drawPoint);
   };
 
-  requestAnimationFrame(drawPoint);
   useEffect(() => {
     animationFrameId = requestAnimationFrame(drawPoint);
 
@@ -59,7 +89,10 @@ export default function Draw() {
   }, [cursorPosition]);
 
   return (
-    <canvas className="container" style={{ position: "relative" }}>
+    <div
+      className="container"
+      style={{ position: "relative", backgroundColor: backgroundColor }}
+    >
       {drawnPoints.map((point, index) => (
         <div
           key={index}
@@ -70,11 +103,10 @@ export default function Draw() {
             width: width,
             height: height,
             position: "absolute",
+            background: color,
           }}
-        >
-          Rita något coolt
-        </div>
+        />
       ))}
-    </canvas>
+    </div>
   );
 }
