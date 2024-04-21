@@ -66,16 +66,17 @@
   .sv-btn {
     font-weight: 200;
     position: relative;
+    padding-right: 0.5rem;
 
     &::after {
       position: absolute;
       content: "/";
-      padding-left: 0.2rem;
+      padding-left: 0.5rem;
     }
   }
 
   .en-btn {
-    padding-left: 0.8rem;
+    padding-left: 0.5rem;
 
     &--active {
       font-weight: 800;

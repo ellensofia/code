@@ -1,34 +1,41 @@
-@mixin standard($color: var(--color-primary)) {
+@mixin standard($color: var(--color-primary), $font-size: var(--font-size-1)) {
   color: $color;
   text-decoration: none;
-  font-size: var(--font-size-1);
+  font-size: $font-size;
   position: relative;
   transition: 0.5s ease;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 100;
+  opacity: 0.9;
 
   &::after,
   &::before {
     content: "";
     position: absolute;
-    height: 0.01em;
+    height: 0.02em;
     width: 100%;
     bottom: -3px;
     left: 0;
     transition: 0.6s linear;
     background-color: var(--color-primary);
+    opacity: 0.9;
   }
 
   &::after {
     width: 0;
+    height: 0.03em;
   }
 
   &::before {
     background-color: var(--color-accent);
   }
 
+  &:hover {
+    opacity: 0.9;
+  }
+
   &:hover::after {
     transform: scaleX(1);
-    width: calc(100vw - 200px);
+    width: 100%;
+    opacity: 0.9;
   }
 }

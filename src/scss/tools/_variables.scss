@@ -3,20 +3,20 @@
 /* Global Variables */
 :root {
   --section-gap: 12rem;
-  --section-inner-gap: calc(var(--section-gap) * 0.75);
-  --section-inner-gap-small: calc(var(--section-gap) * 0.5);
-  --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25);
-  --grid-container-projects: minmax(6rem, 1fr) [inner-start] minmax(0, 140rem)
+  --section-inner-gap: calc(var(--section-gap) * 0.75); // 144px
+  --section-inner-gap-small: calc(var(--section-gap) * 0.5); // 96px
+  --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25); // 48px
+  --grid-container-projects: minmax(6rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(6rem, 1fr);
   --grid-container-projects-small: minmax(3rem, 1fr) [inner-start]
-    minmax(0, 140rem) [inner-end] minmax(3rem, 1fr);
+    minmax(0, 190rem) [inner-end] minmax(3rem, 1fr);
   --grid-container-projects-xsmall: minmax(1.5rem, 1fr) [inner-start]
-    minmax(0, 140rem) [inner-end] minmax(1.5rem, 1fr);
-  --grid-container: minmax(6rem, 1fr) [inner-start] minmax(0, 140rem)
+    minmax(0, 190rem) [inner-end] minmax(1.5rem, 1fr);
+  --grid-container: minmax(6rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(6rem, 1fr);
-  --grid-container-small: minmax(3rem, 1fr) [inner-start] minmax(0, 140rem)
+  --grid-container-small: minmax(3rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(3rem, 1fr);
-  --grid-container-xsmall: minmax(1.5rem, 1fr) [inner-start] minmax(0, 140rem)
+  --grid-container-xsmall: minmax(1.5rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(1.5rem, 1fr);
   --header-height: 6.85rem;
 
@@ -38,7 +38,7 @@
   --font-size-hero: calc(var(--font-size-6) * var(--font-scale)); // 99.6px
 
   // Colors
-  --color-primary: #1a1a1a;
+  --color-primary: #0d0d0d;
   --color-accent: #999999;
   --color-bg: #f7f7f7;
 }
@@ -47,7 +47,7 @@
 html.darkmode {
   --color-primary: rgb(209, 215, 219);
   --color-accent: rgb(166, 166, 166);
-  --color-bg: #212121;
+  --color-bg: #151515;
 }
 
 p,
@@ -63,7 +63,7 @@ h4,
 h5,
 h6 {
   line-height: 1.1;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 // Change margins on smaller screens
