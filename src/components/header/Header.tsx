@@ -15,19 +15,17 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
 
-  const handleKeyEnterPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      toggleMenu();
-    }
-  };
-
-  const handleKeyEnterPressDarkMode = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      toggleDarkmode();
-    }
-  };
+  const handleKeyEnterPress =
+    (funcType: string) => (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (funcType === "menu") {
+          toggleMenu();
+        } else if (funcType === "darkmode") {
+          toggleDarkmode();
+        }
+      }
+    };
 
   const handleKeyEnterPressTranslation =
     (lang: "sv" | "en") => (e: React.KeyboardEvent) => {
@@ -45,7 +43,7 @@ export default function Header() {
             <button
               onClick={toggleDarkmode}
               ref={menuBtnRef}
-              onKeyDown={handleKeyEnterPressDarkMode}
+              onKeyDown={handleKeyEnterPress("darkmode")}
             >
               <span>{isDarkmode ? "Dark" : "Light"}</span>
             </button>
@@ -86,7 +84,7 @@ export default function Header() {
             <div
               className="menu__btn btn"
               onClick={toggleMenu}
-              onKeyDown={handleKeyEnterPress}
+              onKeyDown={handleKeyEnterPress("menu")}
               tabIndex={0}
               aria-label="menu button"
             >
