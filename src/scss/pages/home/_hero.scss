@@ -11,7 +11,7 @@
 
   h1 {
     line-height: 1;
-    font-size: clamp(3rem, 12dvw, 15rem);
+    font-size: clamp(3.2rem, 12dvw, 15rem);
     max-width: 900px;
   }
 
@@ -75,6 +75,7 @@
 
     h1 {
       margin-top: 1.6rem;
+      font-size: clamp(3.2rem, 18dvw, 10rem);
     }
   }
 }

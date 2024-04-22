@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--section-inner-gap-small);
-    mix-blend-mode: difference;
   }
 
   &__column {
@@ -42,12 +41,11 @@
     &__text {
       max-width: 70vw;
     }
-
     &__list {
       justify-content: center;
     }
     &__columns {
-      gap: var(--section-inner-gap-xsmall);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

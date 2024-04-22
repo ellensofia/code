@@ -51,7 +51,6 @@ export default function Projects() {
           <div className="projects__container">
             <div
               className="project"
-              tabIndex={0}
               onClick={toggleOpenProject}
               onKeyDown={toggleOpenProjectOnKeyDown}
             >
@@ -68,6 +67,7 @@ export default function Projects() {
                 className={
                   isProjectOpen ? `project__copy` : `project__copy visible`
                 }
+                tabIndex={-1}
               >
                 <div>
                   <div>
@@ -86,10 +86,16 @@ export default function Projects() {
                     HTML | CSS | Javascript
                   </span>
                   <div className="flex">
-                    <a href="https://pixelperfectinnovations.netlify.app/">
+                    <a
+                      href="https://pixelperfectinnovations.netlify.app/"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <span className="project__link2">Demo</span>
                     </a>
-                    <a href="https://github.com/ellensofia/portfolio-web-agency">
+                    <a
+                      href="https://github.com/ellensofia/portfolio-web-agency"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <img src={githubIcon} alt="" className="github-icon" />
                     </a>
                   </div>
@@ -97,8 +103,8 @@ export default function Projects() {
               </div>
             </div>
             <div
-              className="project"
               tabIndex={0}
+              className="project"
               onClick={toggleOpenProject}
               onKeyDown={toggleOpenProjectOnKeyDown}
             >
@@ -112,6 +118,7 @@ export default function Projects() {
                 className={
                   isProjectOpen ? `project__copy` : `project__copy visible`
                 }
+                tabIndex={-1}
               >
                 <div>
                   <h5 className="project__title project__title7">Oasis</h5>
@@ -124,11 +131,21 @@ export default function Projects() {
                 <div className="project__lower">
                   <span className="project__tools">Typescript | React</span>
                   <div className="flex">
-                    <a href="https://papaya-lamington-fca010.netlify.app/">
+                    <a
+                      href="https://papaya-lamington-fca010.netlify.app/"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <span className="project__link1">Demo</span>
                     </a>
-                    <a href="https://github.com/ellensofia/food-finder">
-                      <img src={githubIcon} alt="" className="github-icon" />
+                    <a
+                      href="https://github.com/ellensofia/food-finder"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
+                      <img
+                        src={githubIcon}
+                        alt="github icon"
+                        className="github-icon"
+                      />
                     </a>
                   </div>
                 </div>
@@ -136,8 +153,8 @@ export default function Projects() {
             </div>
 
             <div
-              className="project"
               tabIndex={0}
+              className="project"
               onClick={toggleOpenProject}
               onKeyDown={toggleOpenProjectOnKeyDown}
             >
@@ -151,6 +168,7 @@ export default function Projects() {
                 className={
                   isProjectOpen ? `project__copy` : `project__copy visible`
                 }
+                tabIndex={-1}
               >
                 <div>
                   <h5 className="project__title project__title8">
@@ -167,10 +185,16 @@ export default function Projects() {
                     Typescript | React | HTML | MUI
                   </span>
                   <div className="flex">
-                    <a href="https://main--piece-by-piece.netlify.app/">
+                    <a
+                      href="https://main--piece-by-piece.netlify.app/"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <span className="project__link">Demo</span>
                     </a>
-                    <a href="https://github.com/ellensofia/webshop-piece-by-piece">
+                    <a
+                      href="https://github.com/ellensofia/webshop-piece-by-piece"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <img src={githubIcon} alt="" className="github-icon" />
                     </a>
                   </div>
@@ -178,8 +202,8 @@ export default function Projects() {
               </div>
             </div>
             <div
-              className="project"
               tabIndex={0}
+              className="project"
               onClick={toggleOpenProject}
               onKeyDown={toggleOpenProjectOnKeyDown}
             >
@@ -193,6 +217,7 @@ export default function Projects() {
                 className={
                   isProjectOpen ? `project__copy` : `project__copy visible`
                 }
+                tabIndex={-1}
               >
                 <div>
                   <h5 className="project__title project__title7">
@@ -209,19 +234,29 @@ export default function Projects() {
                     Typescript | React | HTML
                   </span>
                   <div className="flex">
-                    <a href="https://papaya-lamington-fca010.netlify.app/">
+                    <a
+                      href="https://papaya-lamington-fca010.netlify.app/"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
                       <span className="project__link1">Demo</span>
                     </a>
-                    <a href="https://github.com/ellensofia/food-finder">
-                      <img src={githubIcon} alt="" className="github-icon" />
+                    <a
+                      href="https://github.com/ellensofia/food-finder"
+                      tabIndex={!isProjectOpen ? 0 : -1}
+                    >
+                      <img
+                        src={githubIcon}
+                        alt="github icon"
+                        className="github-icon"
+                      />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              className="project"
               tabIndex={0}
+              className="project"
               onClick={toggleOpenProject}
               onKeyDown={toggleOpenProjectOnKeyDown}
             >
@@ -235,6 +270,7 @@ export default function Projects() {
                 className={
                   isProjectOpen ? `project__copy` : `project__copy visible`
                 }
+                tabIndex={-1}
               >
                 <div>
                   <h5 className="project__title project__title6">
@@ -250,7 +286,10 @@ export default function Projects() {
                   <span className="project__tools">
                     Javascript | P5 | HTML | CSS
                   </span>
-                  <a href="https://github.com/ellensofia/take-n-bake-game">
+                  <a
+                    href="https://github.com/ellensofia/take-n-bake-game"
+                    tabIndex={!isProjectOpen ? 0 : -1}
+                  >
                     <span className="project__link1">Source code</span>
                     <img src={githubIcon} alt="" className="github-icon" />
                   </a>

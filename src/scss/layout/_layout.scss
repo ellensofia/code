@@ -47,7 +47,7 @@
 }
 
 section {
-  margin-bottom: var(--section-gap);
+  margin-bottom: calc(var(--section-gap) * 1.25);
 
   @include responsive.max(40em) {
     margin-bottom: var(--section-inner-gap-small);

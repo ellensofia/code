@@ -33,15 +33,15 @@
     margin: 2rem 0;
   }
 
-  // 961px
-  @include responsive.max(60em) {
+  @include responsive.max(68em) {
     &__inner {
       flex-direction: column;
       gap: 0;
+      padding-right: 0;
+      align-items: center;
     }
 
     &__copy {
-      margin-bottom: var(--section-inner-gap-small);
       width: 70vw;
     }
 
@@ -51,6 +51,7 @@
 
     &__img {
       width: auto;
+      max-width: 360px;
     }
   }
 
@@ -60,7 +61,7 @@
     }
 
     &__img {
-      //max-width: 21rem;
+      max-width: 85%;
     }
   }
 }
