@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 /* import githubDark from "../../assets/icons/github-white.svg";
 import github from "../../assets/icons/github.svg"; */
 import { useTheme } from "../../context/ThemeContext";
@@ -8,18 +8,34 @@ import Menu from "../menu/Menu";
 export default function Header() {
   const { isDarkmode, toggleDarkmode } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { toggleTranslation, activeLang } = useTranslation();
+  const { changeActiveLang, activeLang } = useTranslation();
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleKeyEnterPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault;
+      toggleMenu();
+    }
+  };
+
+  const handleKeyEnterPressTranslation =
+    (lang: "sv" | "en") => (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault;
+        changeActiveLang(lang);
+      }
+    };
+
   return (
     <>
-      <header className="header">
+      <header className="header" tabIndex={0}>
         <div className="header__inner">
           <div className="header__left">
-            <button onClick={toggleDarkmode}>
+            <button onClick={toggleDarkmode} ref={menuBtnRef}>
               <span>{isDarkmode ? "Dark" : "Light"}</span>
             </button>
             <a
@@ -34,15 +50,20 @@ export default function Header() {
                 className={
                   activeLang === "sv" ? "sv-btn lang--active" : "sv-btn"
                 }
-                onClick={toggleTranslation}
+                onClick={() => changeActiveLang("sv")}
+                onKeyDown={handleKeyEnterPressTranslation("sv")}
+                tabIndex={0}
               >
                 SV
-              </span>{" "}
+              </span>
+              {"  "}
               <span
                 className={
                   activeLang === "en" ? "en-btn lang--active" : "en-btn"
                 }
-                onClick={toggleTranslation}
+                tabIndex={0}
+                onClick={() => changeActiveLang("en")}
+                onKeyDown={handleKeyEnterPressTranslation("en")}
               >
                 {" "}
                 EN
@@ -51,15 +72,25 @@ export default function Header() {
           </div>
 
           <div className="header__right">
-            <div className="menu__btn btn" onClick={toggleMenu}>
+            <div
+              className="menu__btn btn"
+              onClick={toggleMenu}
+              onKeyDown={handleKeyEnterPress}
+              tabIndex={0}
+              aria-label="menu button"
+            >
               <div
                 className={menuOpen ? "menu__burger--open" : "menu__burger"}
-              ></div>
+              />
             </div>
           </div>
         </div>
       </header>
-      <Menu menuOpen={menuOpen} toggleMenuOpen={toggleMenu} />
+      <Menu
+        menuOpen={menuOpen}
+        toggleMenuOpen={toggleMenu}
+        menuBtnRef={menuBtnRef}
+      />
     </>
   );
 }
