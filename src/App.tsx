@@ -7,7 +7,6 @@ import { TranslationProvider } from "./context/TranslationContext";
 import About from "./pages/home/about/About";
 import Contact from "./pages/home/contact/Contact";
 import Hero from "./pages/home/hero/Hero";
-import Scene from "./pages/home/hero/Scene";
 import Projects from "./pages/home/projects/Projects";
 import Tech from "./pages/home/tech/Tech";
 
@@ -26,7 +25,6 @@ function App() {
       <TranslationProvider>
         <TextAnimation />
         <Header />
-        <Scene />
         <Hero />
         <About />
         <Tech />

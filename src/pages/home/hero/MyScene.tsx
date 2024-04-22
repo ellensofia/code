@@ -21,7 +21,7 @@ export default function Scene() {
       roughness: 0.01,
       metalness: 0.9,
       transparent: true,
-      opacity: 0.2,
+      opacity: isDarkmode ? 0.5 : 1,
     });
 
     const meshLit = new THREE.Mesh(geometry, materialLit);
@@ -32,7 +32,7 @@ export default function Scene() {
       roughness: 2,
       metalness: 0.9,
       transparent: true,
-      opacity: isDarkmode ? 0.2 : 0.2,
+      opacity: isDarkmode ? 0.2 : 0.8,
     });
 
     const meshLight = new THREE.Mesh(geometry, materialShadow);

@@ -11,8 +11,13 @@
     "style": "--watch sass src/scss/ -o dist/css/"
   },
   "dependencies": {
+    "@react-three/drei": "^9.105.4",
+    "gsap": "^3.12.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.163.0",
+    "three-orbitcontrols": "^2.110.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
