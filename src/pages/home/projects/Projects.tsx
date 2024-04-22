@@ -26,6 +26,13 @@ export default function Projects() {
     setIsProjectOpen(!isProjectOpen);
   };
 
+  const toggleOpenProjectOnKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setIsProjectOpen(!isProjectOpen);
+    }
+  };
+
   return (
     <>
       <div className="anchor" id="projects"></div>
@@ -41,8 +48,13 @@ export default function Projects() {
               ? translations.sv.openLink
               : translations.en.openLink}
           </h6>
-          <div className="projects__container" onClick={toggleOpenProject}>
-            <div className="project">
+          <div className="projects__container">
+            <div
+              className="project"
+              tabIndex={0}
+              onClick={toggleOpenProject}
+              onKeyDown={toggleOpenProjectOnKeyDown}
+            >
               <picture>
                 <source
                   media="(max-width: 560px)"
@@ -84,7 +96,12 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-            <div className="project">
+            <div
+              className="project"
+              tabIndex={0}
+              onClick={toggleOpenProject}
+              onKeyDown={toggleOpenProjectOnKeyDown}
+            >
               <picture>
                 <source media="(max-width: 560px)" srcSet={oasisPhone} />
                 <source media="(max-width: 870px)" srcSet={oasisIpad} />
@@ -118,7 +135,12 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="project">
+            <div
+              className="project"
+              tabIndex={0}
+              onClick={toggleOpenProject}
+              onKeyDown={toggleOpenProjectOnKeyDown}
+            >
               <picture>
                 <source media="(max-width: 560px)" srcSet={pieceBypiecephone} />
                 <source media="(max-width: 870px)" srcSet={pieceBypieceipad} />
@@ -155,7 +177,12 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-            <div className="project">
+            <div
+              className="project"
+              tabIndex={0}
+              onClick={toggleOpenProject}
+              onKeyDown={toggleOpenProjectOnKeyDown}
+            >
               <picture>
                 <source media="(max-width: 560px)" srcSet={foodFinderphone} />
                 <source media="(max-width: 870px)" srcSet={foodFinderipad} />
@@ -192,7 +219,12 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-            <div className="project">
+            <div
+              className="project"
+              tabIndex={0}
+              onClick={toggleOpenProject}
+              onKeyDown={toggleOpenProjectOnKeyDown}
+            >
               <picture>
                 <source media="(max-width: 560px)" srcSet={takeNBakePhone} />
                 <source media="(max-width: 870px)" srcSet={takeNBakeIpad} />
