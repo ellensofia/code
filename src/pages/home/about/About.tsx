@@ -16,7 +16,7 @@ export default function About() {
             className="about__img"
           />
           <div className="about__copy">
-            <h2 className="about__title hidden">
+            <h2 className="about__title hidden" tabIndex={0}>
               {activeLang === "sv"
                 ? translations.sv.about
                 : translations.en.about}

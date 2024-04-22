@@ -17,7 +17,6 @@
     z-index: 2;
   }
 
-  // Changes left and right margins of the grid container on smaller screens
   @include responsive.max(40em) {
     grid-template-columns: var(--grid-container-small);
   }
@@ -33,6 +32,9 @@
 
   &__inner {
     grid-column: 2/4;
+    @include responsive.min(2000px) {
+      grid-column: 2/3;
+    }
   }
 
   @include responsive.max(40em) {

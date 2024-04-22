@@ -25,7 +25,8 @@ a {
 
 body,
 header,
-nav {
+nav,
+.grid-item {
   margin: 0;
   padding: 0;
   transition: 0.25s ease-in-out;
@@ -43,4 +44,12 @@ a,
 
 ul {
   padding: 0;
+}
+
+#background-video {
+  width: 140%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
