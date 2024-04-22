@@ -2,18 +2,18 @@
 
 /* Global Variables */
 :root {
-  --section-gap: 12rem;
+  --section-gap: 14rem;
   --section-inner-gap: calc(var(--section-gap) * 0.75); // 144px
   --section-inner-gap-small: calc(var(--section-gap) * 0.5); // 96px
   --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25); // 48px
-  --grid-container-projects: minmax(6rem, 1fr) [inner-start] minmax(0, 190rem)
-    [inner-end] minmax(6rem, 1fr);
+  --grid-container-projects: minmax(10rem, 1fr) [inner-start] minmax(0, 190rem)
+    [inner-end] minmax(12rem, 1fr);
   --grid-container-projects-small: minmax(3rem, 1fr) [inner-start]
     minmax(0, 190rem) [inner-end] minmax(3rem, 1fr);
   --grid-container-projects-xsmall: minmax(1.5rem, 1fr) [inner-start]
     minmax(0, 190rem) [inner-end] minmax(1.5rem, 1fr);
-  --grid-container: minmax(6rem, 1fr) [inner-start] minmax(0, 190rem)
-    [inner-end] minmax(6rem, 1fr);
+  --grid-container: minmax(10rem, 1fr) [inner-start] minmax(0, 190rem)
+    [inner-end] minmax(10rem, 1fr);
   --grid-container-small: minmax(3rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(3rem, 1fr);
   --grid-container-xsmall: minmax(1.5rem, 1fr) [inner-start] minmax(0, 190rem)
@@ -54,6 +54,10 @@ p,
 a,
 span {
   line-height: 1.5;
+}
+
+*:focus {
+  outline-color: var(--color-primary);
 }
 
 h1,

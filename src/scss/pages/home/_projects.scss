@@ -114,6 +114,10 @@
       gap: 1rem;
     }
 
+    h5 {
+      margin-bottom: 2rem;
+    }
+
     @include responsive.max(35em) {
       width: 24rem;
       min-width: 24rem;
@@ -148,7 +152,7 @@
 
       &__img {
         min-width: 24rem;
-        height: 49rem;
+        height: 51rem;
         object-fit: cover;
         object-position: 50% 0;
       }

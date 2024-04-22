@@ -31,7 +31,7 @@ export default function Projects() {
       <div className="anchor" id="projects"></div>
       <section className="projects">
         <div className="projects__inner">
-          <h3 className="projects__title hidden">
+          <h3 className="projects__title hidden" tabIndex={0}>
             {activeLang === "sv"
               ? translations.sv.projects
               : translations.en.projects}
@@ -100,8 +100,8 @@ export default function Projects() {
                   <h5 className="project__title project__title7">Oasis</h5>
                   <p className="project__text project__text7">
                     {activeLang === "sv"
-                      ? translations.sv.project3
-                      : translations.en.project3}
+                      ? translations.sv.project2
+                      : translations.en.project2}
                   </p>
                 </div>
                 <div className="project__lower">
@@ -172,9 +172,9 @@ export default function Projects() {
                     Food finder
                   </h5>
                   <p className="project__text project__text7">
-                    Detta är en React-app som skapats i grupp. Appen heter
-                    Food-finder och hjälper användaren att hitta recept baserat
-                    på vilka ingredienser de har hemma.
+                    {activeLang === "sv"
+                      ? translations.sv.project3
+                      : translations.en.project3}
                   </p>
                 </div>
                 <div className="project__lower">
@@ -209,10 +209,9 @@ export default function Projects() {
                     Take 'n bake
                   </h5>
                   <p className="project__text project__text6">
-                    Detta är ett spel som är skapat med p5 och Javascript och
-                    koden är strukturerad på ett objektorienterat sätt. Vi
-                    arbetade i grupp och tog fram design och idé tillsammans.
-                    Spelet kan tyvärr bara visas i fullscreen på desktop.
+                    {activeLang === "sv"
+                      ? translations.sv.project5
+                      : translations.en.project5}
                   </p>
                 </div>
                 <div className="project__lower">
@@ -221,42 +220,6 @@ export default function Projects() {
                   </span>
                   <a href="https://github.com/ellensofia/take-n-bake-game">
                     <span className="project__link1">Source code</span>
-                    <img src={githubIcon} alt="" className="github-icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="project">
-              <picture>
-                <source media="(max-width: 560px)" srcSet={oasisPhone} />
-                <source media="(max-width: 870px)" srcSet={oasisIpad} />
-                <source media="(min-width: 870px)" srcSet={oasis} />
-                <img src="" alt="" className="project__img" />
-              </picture>
-              <div
-                className={
-                  isProjectOpen ? `project__copy` : `project__copy visible`
-                }
-              >
-                <div>
-                  <div>
-                    <h5 className="project__title project__title4">Dine pal</h5>
-                    <p className="project__text project__text4">
-                      {activeLang === "sv"
-                        ? translations.sv.project4
-                        : translations.en.project4}
-                    </p>
-                  </div>
-                </div>
-                <div className="project__lower">
-                  <span className="project__tools">
-                    React | TypeScript | Scss | next.js | mongoDb | prisma
-                  </span>
-                  <a href="https://oasis-webshop.netlify.app/">
-                    <span className="project__link4">Demo</span>
-                  </a>
-                  <a href={"https://github.com/ellensofia/e-commerce"}>
                     <img src={githubIcon} alt="" className="github-icon" />
                   </a>
                 </div>
@@ -279,23 +242,27 @@ const translations = {
       "Oasis E-Shop är en skoluppgift. Uppgiften var att skapa ett fiktivt märke med en grafisk profil och utveckla en e-handel med minst två produkter. Projektet är byggt med React, Typescript och Styled Components.",
     project2Title: "Oasis hudvård",
     project3:
-      "Detta är en React-app som skapats i grupp. Appen heter Food-finder och hjälper användaren att hitta recept baserat på vilka ingredienser de har hemma.",
+      "Food-finder är en React-app som skapats i grupp. Appen hjälper användaren att hitta recept baserat på vilka ingredienser de har hemma.",
     project4:
       "Sidan är gjort för en fiktiv webbyrå. Detta var ett gruppprojekt där vi arbetade med scrum. Projektet är gjort i React, TypeScript och Styled Components.",
-    project5: "",
+    project5:
+      "Detta är ett spel som är skapat med p5 och Javascript och koden är strukturerad på ett objektorienterat sätt. Vi arbetade i grupp och tog fram design och idé tillsammans. Spelet kan tyvärr bara visas i fullscreen på desktop.",
     story: "hejhej",
   },
   en: {
     projects: "Projects",
     openLink: "Click on the projects to see more",
     project1:
-      "This is a webshop that I built with two classmates. Vi used React, Typescript and MUI to create an interface for both user and admin.",
+      "This is a webshop that I built with two classmates. We used React, Typescript and MUI to create an interface for both user and admin.",
     project2:
       "Oasis E-Shop is a school project. The assignment required the creation of a fictitious brand with a graphic profile and the development of an online store to sell a minimum of two products or services. The project was built using React, TypeScript, and Styled Components.",
     project2Title: "Oasis skincare",
-    project3: "",
-    project4: "",
-    project5: "",
+    project3:
+      "Food-finder is a React app created as a team assignment. The app helps the user find recipes based on what ingredients they have at home.",
+    project4:
+      "The page is made for a fictitious web agency. This was a group project where we worked with scrum. The project is made in React, TypeScript and Styled Components.",
+    project5:
+      "This is a game created with p5 and Javascript and the code is structured in an object oriented way. We worked as a group and came up with the design and idea together. The game can only be displayed in full screen on desktop.",
     story: "hellohello",
   },
 };
