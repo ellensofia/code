@@ -17,15 +17,22 @@ export default function Header() {
 
   const handleKeyEnterPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      e.preventDefault;
+      e.preventDefault();
       toggleMenu();
+    }
+  };
+
+  const handleKeyEnterPressDarkMode = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      toggleDarkmode();
     }
   };
 
   const handleKeyEnterPressTranslation =
     (lang: "sv" | "en") => (e: React.KeyboardEvent) => {
       if (e.key === "Enter") {
-        e.preventDefault;
+        e.preventDefault();
         changeActiveLang(lang);
       }
     };
@@ -35,7 +42,11 @@ export default function Header() {
       <header className="header" tabIndex={0}>
         <div className="header__inner">
           <div className="header__left">
-            <button onClick={toggleDarkmode} ref={menuBtnRef}>
+            <button
+              onClick={toggleDarkmode}
+              ref={menuBtnRef}
+              onKeyDown={handleKeyEnterPressDarkMode}
+            >
               <span>{isDarkmode ? "Dark" : "Light"}</span>
             </button>
             <a
