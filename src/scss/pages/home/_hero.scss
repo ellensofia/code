@@ -11,7 +11,8 @@
 
   h1 {
     line-height: 1;
-    font-size: clamp(3rem, 15dvw, 19rem);
+    font-size: clamp(3rem, 12dvw, 15rem);
+    max-width: 900px;
   }
 
   &__inner {
@@ -52,7 +53,6 @@
 
   h4 {
     max-width: 320px;
-    //padding-left: 38px;
     padding-top: 2.5rem;
   }
 

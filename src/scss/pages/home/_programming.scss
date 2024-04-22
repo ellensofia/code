@@ -1,66 +1,59 @@
-@use '../../tools/responsive';
-@use '../../tools/variables';
+@use "../../tools/responsive";
+@use "../../tools/variables";
 
 .programming {
-    min-width: 50vw;
+  min-width: 50vw;
+  margin-bottom: var(--section-gap);
 
-    &__columns {
-        display: flex;
-        gap: var(--section-inner-gap-small);
-        flex-wrap: wrap;
-    }    
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--section-inner-gap-small);
+    mix-blend-mode: difference;
+  }
 
-    &__column {
-        line-height: 1.5;
-    }
+  &__column {
+    line-height: 1.5;
+  }
 
-    &__title {
-        max-width: 44vw;
-    }
+  &__title {
+    max-width: 50vw;
+  }
 
-    &__item {
-        padding-bottom: 1rem;
-        font-weight: 400;
-    }
+  p {
+    padding-bottom: 2.25rem;
+    font-size: var(--font-size-2);
+  }
 
-    &__inner {
-        flex-direction: column;
-    }
+  &__inner {
+    flex-direction: column;
+  }
 
-    &__title {
-        margin-bottom: var(--section-inner-gap-xsmall);
-    }
+  &__title {
+    margin-bottom: var(--section-inner-gap-small);
+  }
 
+  &__text {
+    margin-bottom: var(--section-inner-gap-xsmall);
+  }
+
+  @include responsive.max(60em) {
+    &__title,
     &__text {
-        margin-bottom: var(--section-inner-gap-xsmall);
-    }
-    
-    @include responsive.max(60em) {
-
-        &__title {
-            max-width: 70vw;
-        }
-
-        &__text {
-            max-width: 70vw;
-        }
-
-        &__list {
-            justify-content: center;
-        }
+      max-width: 70vw;
     }
 
-    @include responsive.max(40em) {
-        &__columns {
-            gap: var(--section-inner-gap-xsmall);
-        }
-
-        &__text {
-            max-width: 70vw;
-        }
-
-        &__list {
-            justify-content: center;
-        }
+    &__list {
+      justify-content: center;
     }
+    &__columns {
+      gap: var(--section-inner-gap-xsmall);
+    }
+  }
+
+  @include responsive.max(40em) {
+    p {
+      font-size: var(--font-size-2);
+    }
+  }
 }

@@ -9,6 +9,7 @@
     position: relative;
     justify-content: flex-end;
     text-align: right;
+    padding-right: 10vw;
   }
 
   &__img {
@@ -19,6 +20,7 @@
     min-width: 15rem;
     margin-bottom: var(--section-inner-gap-small);
     border-radius: 50%;
+    filter: contrast(1.2) grayscale(0.1);
   }
 
   &__copy {
