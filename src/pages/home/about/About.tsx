@@ -12,7 +12,7 @@ export default function About() {
           <img
             src={image}
             alt="portrait of Ellen Dahlgren"
-            className="about__img"
+            className="about__img hidden"
           />
           <div className="about__copy">
             <h2 className="about__title hidden">
