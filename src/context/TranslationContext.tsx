@@ -13,10 +13,15 @@ const TranslationContext = createContext<TranslationContextType>({
 export const TranslationProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [activeLang, setActiveLang] =
-    useState<TranslationContextType["activeLang"]>("sv");
+  const [activeLang, setActiveLang] = useState<
+    TranslationContextType["activeLang"]
+  >(() => {
+    const savedLang = localStorage.getItem("language");
+    return savedLang ? JSON.parse(savedLang) : "sv";
+  });
 
   const changeActiveLang = (language: "sv" | "en") => {
+    localStorage.setItem("language", JSON.stringify(language));
     setActiveLang(language);
   };
 
