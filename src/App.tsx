@@ -1,9 +1,9 @@
+import "../style.css";
 import TextAnimation from "./animations/TextAnimation";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import { ThemeProvider } from "./context/ThemeContext";
 import { TranslationProvider } from "./context/TranslationContext";
-import "./dist/css/style.css";
 import About from "./pages/home/about/About";
 import Contact from "./pages/home/contact/Contact";
 import Hero from "./pages/home/hero/Hero";
