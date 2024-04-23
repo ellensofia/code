@@ -29,6 +29,10 @@
     text-align: justify;
   }
 
+  p:first-of-type {
+    padding-bottom: var(--section-inner-gap-xsmall);
+  }
+
   &__title {
     margin: 2rem 0;
   }
