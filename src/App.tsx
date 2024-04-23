@@ -1,3 +1,4 @@
+import "../dist/css/style.css";
 import TextAnimation from "./animations/TextAnimation";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
@@ -8,7 +9,6 @@ import Contact from "./pages/home/contact/Contact";
 import Hero from "./pages/home/hero/Hero";
 import Projects from "./pages/home/projects/Projects";
 import Tech from "./pages/home/tech/Tech";
-import "/style.css";
 
 function App() {
   /*   const [cursorPosition, setCursorPosition] = useState({ x: -1, y: -1 });
