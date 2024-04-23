@@ -54,7 +54,7 @@
 
     &__img {
       width: auto;
-      max-width: 300px;
+      max-width: 225px;
     }
   }
 
@@ -65,7 +65,7 @@
   }
   @include responsive.max(30em) {
     &__img {
-      max-width: 85%;
+      width: 75vw;
     }
   }
 }

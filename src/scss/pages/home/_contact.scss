@@ -27,7 +27,7 @@
       height: 0.175rem;
       top: var(--section-inner-gap-medium);
       width: 100%;
-      background-color: var(--color-accent);
+      background-color: var(--color-grey);
     }
   }
 
@@ -36,20 +36,27 @@
   }
 
   @include responsive.max(35em) {
-    .contact {
-      &__inner {
-        padding: 0;
-        position: relative;
+    margin-bottom: 6rem;
 
-        &::after {
-          display: none;
-        }
+    &__inner {
+      padding: 0;
+      position: relative;
+
+      &::after {
+        display: none;
       }
-      &__link {
-        gap: 1rem;
-        white-space: nowrap;
-        font-size: 1.4rem;
-      }
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+      font-size: var(--font-size-3);
+    }
+
+    &__link {
+      padding: 2rem 0;
+      gap: 1rem;
+      white-space: nowrap;
+      font-size: 1.6rem;
     }
   }
 }

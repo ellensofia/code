@@ -40,19 +40,10 @@
 
   &__item {
     transition-duration: 0.4s;
-    transform: translateY(-3rem);
+    transform: translateY(-1rem);
     opacity: 0;
     line-height: 1.2;
 
-    &:nth-of-type(1) {
-      transition-delay: 0.25s;
-    }
-    &:nth-of-type(2) {
-      transition-delay: 0.5s;
-    }
-    &:nth-of-type(3) {
-      transition-delay: 0.75s;
-    }
     a {
       font-weight: 400;
       display: flex;

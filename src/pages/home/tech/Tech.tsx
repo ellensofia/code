@@ -2,37 +2,49 @@ import { useTranslation } from "../../../context/TranslationContext";
 
 export default function Tech() {
   const { activeLang } = useTranslation();
-
+  const tech = [
+    { value: "HTML", class: "underline" },
+    { value: "CSS", class: "underline" },
+    { value: "Typescript", class: "underline" },
+    { value: "React", class: "bold" },
+    { value: "Sanity", class: "" },
+    { value: "Sass/Scss", class: "" },
+    { value: "Emotion", class: "" },
+    { value: "Wordpress", class: "" },
+    { value: "Node.js", class: "" },
+    { value: "Next.js", class: "" },
+    { value: "Javascript", class: "underline" },
+    { value: "Mongo DB", class: "" },
+    { value: "Mongoose", class: "" },
+    { value: "XD", class: "bold" },
+    { value: "Illustrator", class: "" },
+    { value: "Figma", class: "bold" },
+    { value: "Git", class: "bold" },
+    { value: "Photoshop", class: "" },
+  ];
   return (
     <div className="programming">
       <div className="programming__inner">
-        <h3 className="hidden programming__title">
+        <h2 className="hidden programming__title">
           {activeLang === "sv" ? translations.sv.title : translations.en.title}
-        </h3>
+        </h2>
         <div className="hidden programming__columns">
           <div className="hidden programming__column-1 programming__column">
-            <p className="hidden programming__item">HTML</p>
-            <p className="hidden programming__item">CSS</p>
-            <p className="hidden programming__item">Sass/SCSS</p>
-            <p className="hidden programming__item">Emotion</p>
-          </div>
-          <div className="hidden programming__column-2 programming__column">
-            <p className="hidden programming__item">Javascript</p>
-            <p className="hidden programming__item">Typescript</p>
-            <p className="hidden programming__item">React</p>
-            <p className="hidden programming__item">Wordpress</p>
-          </div>
-          <div className="hidden programming__column-2 programming__column">
-            <p className="hidden programming__item">Node.js</p>
-            <p className="hidden programming__item">Next.js</p>
-            <p className="hidden programming__item">Mongo DB</p>
-            <p className="hidden programming__item">Mongoose</p>
-          </div>
-          <div className="hidden programming__column-3 programming__column">
-            <p className="hidden programming__item">Illustrator</p>
-            <p className="hidden programming__item">XD</p>
-            <p className="hidden programming__item">Figma</p>
-            <p className="hidden programming__item">Photoshop</p>
+            {tech &&
+              tech.map((item, i) => (
+                <div>
+                  <p
+                    className={
+                      item.class.length > 0
+                        ? "hidden programming__item " + item.class
+                        : "hidden programming__item"
+                    }
+                    key={i}
+                  >
+                    {item.value}
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
       </div>

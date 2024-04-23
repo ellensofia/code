@@ -4,24 +4,39 @@
 .programming {
   min-width: 50vw;
   margin-bottom: var(--section-gap);
-
   &__columns {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--section-inner-gap-small);
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
   }
 
   &__column {
+    display: flex;
+    flex-wrap: wrap;
     line-height: 1.5;
+    gap: 2rem;
+    max-width: 650px;
   }
 
   &__title {
     max-width: 50vw;
+    width: 700px;
   }
 
   p {
-    padding-bottom: 2.25rem;
     font-size: var(--font-size-2);
+    color: var(--color-grey);
+
+    &:first-of-type  {
+      transform: translateY(-120px);
+    }
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  .bold {
+    font-weight: 600;
+    font-size: calc(var(--font-size-2) * 1.1);
   }
 
   &__inner {
@@ -41,17 +56,19 @@
     &__text {
       max-width: 70vw;
     }
+
     &__list {
       justify-content: center;
-    }
-    &__columns {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @include responsive.max(40em) {
     p {
       font-size: var(--font-size-2);
+    }
+    h2 {
+      font-size: var(--font-size-3);
+      margin-bottom: var(--section-inner-gap-xsmall);
     }
   }
 }

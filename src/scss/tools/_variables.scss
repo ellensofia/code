@@ -39,14 +39,14 @@
 
   // Colors
   --color-primary: #0d0d0d;
-  --color-accent: #999999;
+  --color-grey: #9f9f9f;
   --color-bg: #f7f7f7;
 }
 
 // Darkmode colors
 html.darkmode {
   --color-primary: rgb(209, 215, 219);
-  --color-accent: rgb(166, 166, 166);
+  --color-grey: rgb(137, 137, 137);
   --color-bg: #151515;
 }
 

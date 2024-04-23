@@ -13,11 +13,11 @@ export default function Contact() {
 
       <section className="contact">
         <div className="contact__inner">
-          <h3 className="contact__title hidden">
+          <h2 className="contact__title hidden">
             {activeLang === "sv"
               ? translations.sv.contact
               : translations.en.contact}
-          </h3>
+          </h2>
           <div className="contact__icons">
             <a
               href="https://www.linkedin.com/in/ellen-dahlgren/"
