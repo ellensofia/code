@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { useTheme } from "../../../context/ThemeContext";
@@ -6,14 +6,17 @@ import { useTheme } from "../../../context/ThemeContext";
 export default function Scene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { isDarkmode } = useTheme();
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const scene = new THREE.Scene();
     let geometry;
     if (innerWidth > 600) {
       geometry = new THREE.SphereGeometry(3, 64, 64);
+      setIsMobile(false);
     } else {
-      geometry = new THREE.SphereGeometry(1, 21, 21);
+      setIsMobile(true);
+      geometry = new THREE.SphereGeometry(2, 21, 21);
     }
 
     const materialLit = new THREE.MeshPhysicalMaterial({
@@ -65,11 +68,11 @@ export default function Scene() {
     materialLit.alphaMap;
     materialLit.envMapIntensity = 1.2;
     materialLit.transmission = 1;
-
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
+    controls.enableDamping = isMobile ? false : true;
     controls.enableZoom = false;
     controls.enableRotate = true;
+    controls.enabled = isMobile ? false : true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
 
@@ -115,7 +118,7 @@ export default function Scene() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isDarkmode]);
+  }, [isDarkmode, isMobile]);
 
   return <canvas ref={canvasRef} className="webgl" />;
 }

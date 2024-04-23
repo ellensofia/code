@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import arrow from "../../../../src/assets/icons/arrow-right-white.svg";
 import arrowLight from "../../../../src/assets/icons/arrow-right.svg";
 import { useTheme } from "../../../context/ThemeContext";
@@ -7,6 +8,22 @@ import MyScene from "./MyScene";
 export default function Hero() {
   const { activeLang } = useTranslation();
   const { isDarkmode } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 600) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(true);
+      }
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="hero">
@@ -18,20 +35,22 @@ export default function Hero() {
               ? translations.sv.frontend
               : translations.en.frontend}
           </h1>
-          <h4>
+          <h4 className="hidden">
             {activeLang === "sv"
               ? translations.sv.subtitle
               : translations.en.subtitle}
           </h4>
         </div>
-        <div className="hero__lower">
-          <span>
-            <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
+        <div className="hero__lower hidden">
+          {!isMobile && (
+            <span>
+              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
 
-            {activeLang === "sv"
-              ? translations.sv.interact
-              : translations.en.interact}
-          </span>
+              {activeLang === "sv"
+                ? translations.sv.interact
+                : translations.en.interact}
+            </span>
+          )}
         </div>
       </div>
     </section>
