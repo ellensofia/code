@@ -59,7 +59,8 @@
     &__copy {
       width: 100%;
     }
-
+  }
+  @include responsive.max(30em) {
     &__img {
       max-width: 85%;
     }
