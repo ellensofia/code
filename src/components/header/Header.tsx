@@ -43,6 +43,7 @@ export default function Header() {
               ref={menuBtnRef}
               onKeyDown={handleKeyEnterPress("darkmode")}
               aria-label="Toggle darkmode button"
+              className="darkmode"
             >
               <span>{isDarkmode ? "Dark" : "Light"}</span>
             </button>

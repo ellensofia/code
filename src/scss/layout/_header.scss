@@ -6,7 +6,6 @@
   width: 100%;
   align-items: center;
   z-index: 100;
-  // background-color: var(--color-bg);
 
   &__inner {
     width: 100%;
@@ -43,7 +42,10 @@
   .darkmode {
     height: 24px;
     z-index: 100;
-    cursor: pointer;
+
+    span {
+      cursor: pointer;
+    }
   }
 
   &__github-icon {
