@@ -1,6 +1,4 @@
 import { useRef, useState } from "react";
-/* import githubDark from "../../assets/icons/github-white.svg";
-import github from "../../assets/icons/github.svg"; */
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "../../context/TranslationContext";
 import Menu from "../menu/Menu";
@@ -44,6 +42,7 @@ export default function Header() {
               onClick={toggleDarkmode}
               ref={menuBtnRef}
               onKeyDown={handleKeyEnterPress("darkmode")}
+              aria-label="Toggle darkmode button"
             >
               <span>{isDarkmode ? "Dark" : "Light"}</span>
             </button>
@@ -59,9 +58,11 @@ export default function Header() {
                 className={
                   activeLang === "sv" ? "sv-btn lang--active" : "sv-btn"
                 }
+                tabIndex={0}
+                role="button"
+                aria-label="Button to change site language to swedish"
                 onClick={() => changeActiveLang("sv")}
                 onKeyDown={handleKeyEnterPressTranslation("sv")}
-                tabIndex={0}
               >
                 SV
               </span>
@@ -71,6 +72,8 @@ export default function Header() {
                   activeLang === "en" ? "en-btn lang--active" : "en-btn"
                 }
                 tabIndex={0}
+                role="button"
+                aria-label="Button to change site language to english"
                 onClick={() => changeActiveLang("en")}
                 onKeyDown={handleKeyEnterPressTranslation("en")}
               >
@@ -86,7 +89,8 @@ export default function Header() {
               onClick={toggleMenu}
               onKeyDown={handleKeyEnterPress("menu")}
               tabIndex={0}
-              aria-label="menu button"
+              role="button"
+              aria-label="Menu button"
             >
               <div
                 className={menuOpen ? "menu__burger--open" : "menu__burger"}

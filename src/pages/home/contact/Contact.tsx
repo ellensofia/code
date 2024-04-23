@@ -23,19 +23,19 @@ export default function Contact() {
               href="https://www.linkedin.com/in/ellen-dahlgren/"
               className="contact__link hidden"
             >
-              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
               Linked in
+              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
             </a>
             <a
               href="mailto:ellendahlgren@medieinstitutet.se"
               className="contact__link hidden"
             >
-              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
               ellensofiadahlgren@outlook.com
+              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
             </a>
             <a href="" className="contact__link hidden">
-              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
               0700223329
+              <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
             </a>
           </div>
         </div>

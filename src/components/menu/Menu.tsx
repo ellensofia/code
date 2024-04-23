@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
+import arrowLight from "../../assets/icons/arrow-right-white.svg";
+import arrow from "../../assets/icons/arrow-right.svg";
+import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "../../context/TranslationContext";
-
 interface Props {
   menuOpen: boolean;
   toggleMenuOpen: () => void;
@@ -10,6 +12,7 @@ interface Props {
 export default function Menu({ menuOpen, toggleMenuOpen, menuBtnRef }: Props) {
   const { activeLang } = useTranslation();
   const menuRef = useRef<HTMLElement>(null);
+  const { isDarkmode } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,6 +48,7 @@ export default function Menu({ menuOpen, toggleMenuOpen, menuBtnRef }: Props) {
             tabIndex={0}
           >
             {activeLang === "sv" ? translation.sv.about : translation.en.about}
+            <img src={isDarkmode ? arrowLight : arrow}></img>
           </a>
         </li>
         <li className="menu__item">
@@ -57,6 +61,7 @@ export default function Menu({ menuOpen, toggleMenuOpen, menuBtnRef }: Props) {
             {activeLang === "sv"
               ? translation.sv.projects
               : translation.en.projects}
+            <img src={isDarkmode ? arrowLight : arrow}></img>
           </a>
         </li>
         <li className="menu__item">
@@ -69,6 +74,7 @@ export default function Menu({ menuOpen, toggleMenuOpen, menuBtnRef }: Props) {
             {activeLang === "sv"
               ? translation.sv.contact
               : translation.en.contact}
+            <img src={isDarkmode ? arrowLight : arrow}></img>
           </a>
         </li>
       </ul>
