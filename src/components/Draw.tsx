@@ -10,11 +10,12 @@ export default function Draw() {
   const [drawnPoints, setDrawnPoints] = useState<ICursorPosition[]>([]);
   const [width, setWidth] = useState(window.innerWidth * 0.23);
   const [height, setHeight] = useState(window.innerWidth * 0.23);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [backgroundColor, setBackgroundColor] = useState("var(--color-bg)");
+  const [backgroundColor] = useState("var(--color-bg)");
   let animationFrameId: number;
-  const colors = ["#70d3d3", "#99FFFF", "#66CCCC", "#33CCCC", "#00CCCC"];
+  /*   let colors = ["#99FFFF", "#33CCCC", "#ff99b9", "#c74763"];
+   */ let colors = ["#3cebeb", "#33CCCC", "#e05371", "#c74763"];
   const [color, setColor] = useState(colors[0]);
+  let activeColor = 0;
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,48 +23,35 @@ export default function Draw() {
       setWidth(window.innerWidth * 0.23);
     };
 
+    const onMouseMove = (e: MouseEvent) => {
+      drawPoint();
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+      setColor(colors[0]);
+
+      if (drawnPoints.length > 20) {
+        //activeColor++;
+        const randomI = Math.floor(Math.random() * 2);
+        setColor(colors[randomI]);
+
+        //setColor(colors[activeColor]);
+
+        if (colors.length - 1 > activeColor) {
+          // setColor(colors[activeColor]);
+        } else {
+          activeColor = 0;
+          setColor(colors[activeColor]);
+        }
+      }
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  let activeColor = 0;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onMouseMove = (e: MouseEvent) => {
-    drawPoint();
-    setCursorPosition({ x: e.clientX, y: e.clientY });
-
-    if (drawnPoints.length > 4) {
-      //activeColor++;
-      const randomI = Math.floor(Math.random() * 5);
-      setColor(colors[randomI]);
-
-      //setColor(colors[activeColor]);
-
-      if (colors.length - 1 > activeColor) {
-        console.log(
-          "if true, colors.length: " +
-            colors.length +
-            "activeColor: " +
-            activeColor
-        );
-        // setColor(colors[activeColor]);
-      } else {
-        activeColor = 0;
-        setColor(colors[activeColor]);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", onMouseMove);
-
-    return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [onMouseMove]);
+  }, [drawnPoints]);
 
   const drawPoint = () => {
     if (prevCursorPosition && cursorPosition) {
@@ -73,8 +61,9 @@ export default function Draw() {
         setDrawnPoints((prevPoints) => [...prevPoints, cursorPosition]);
       }
     }
-    if (drawnPoints.length > 460) {
-      console.log("mer än 10");
+
+    if (drawnPoints.length > 360) {
+      colors = ["#e05371", "#c74763"];
       setDrawnPoints([]);
     }
     setPrevCursorPosition(cursorPosition);

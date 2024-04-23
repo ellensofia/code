@@ -13,7 +13,7 @@ export default function Contact() {
 
       <section className="contact">
         <div className="contact__inner">
-          <h3 className="contact__title hidden" tabIndex={0}>
+          <h3 className="contact__title hidden">
             {activeLang === "sv"
               ? translations.sv.contact
               : translations.en.contact}

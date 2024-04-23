@@ -38,7 +38,7 @@ export default function Projects() {
       <div className="anchor" id="projects"></div>
       <section className="projects">
         <div className="projects__inner">
-          <h3 className="projects__title hidden" tabIndex={0}>
+          <h3 className="projects__title hidden">
             {activeLang === "sv"
               ? translations.sv.projects
               : translations.en.projects}

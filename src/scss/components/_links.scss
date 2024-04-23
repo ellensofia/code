@@ -29,11 +29,13 @@
     background-color: var(--color-accent);
   }
 
-  &:hover {
-    opacity: 0.9;
+  &:hover,
+  &:focus {
+    opacity: 1;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     transform: scaleX(1);
     width: 100%;
     opacity: 0.9;

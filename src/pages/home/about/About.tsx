@@ -1,5 +1,4 @@
-/* import Hover, { ICursorPosition } from "../../../Hover";
- */ import image from "../../../assets/images/portrait.jpeg";
+import image from "../../../assets/images/portrait.jpeg";
 import { useTranslation } from "../../../context/TranslationContext";
 export default function About() {
   const { activeLang } = useTranslation();
@@ -16,7 +15,7 @@ export default function About() {
             className="about__img"
           />
           <div className="about__copy">
-            <h2 className="about__title hidden" tabIndex={0}>
+            <h2 className="about__title hidden">
               {activeLang === "sv"
                 ? translations.sv.about
                 : translations.en.about}

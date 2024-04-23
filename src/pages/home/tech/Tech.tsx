@@ -6,7 +6,7 @@ export default function Tech() {
   return (
     <div className="programming">
       <div className="programming__inner">
-        <h3 className="hidden programming__title" tabIndex={0}>
+        <h3 className="hidden programming__title">
           {activeLang === "sv" ? translations.sv.title : translations.en.title}
         </h3>
         <div className="hidden programming__columns">
