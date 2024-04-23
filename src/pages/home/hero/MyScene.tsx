@@ -17,7 +17,7 @@ export default function Scene() {
     }
 
     const materialLit = new THREE.MeshPhysicalMaterial({
-      color: isDarkmode ? 0xffffff : "skyblue",
+      color: isDarkmode ? "white" : "skyblue",
       roughness: 0.01,
       metalness: 0.9,
       transparent: true,
@@ -77,14 +77,18 @@ export default function Scene() {
 
     for (let i = 0; i < numCircles; i++) {
       const geometry = new THREE.SphereGeometry(1, 32, 32);
-      const material = new THREE.MeshStandardMaterial();
+      const material = new THREE.MeshPhysicalMaterial();
       const mesh = new THREE.Mesh(geometry, material);
+      material.opacity = 0.6;
+      material.roughness = 0.4;
+      material.transparent = true;
+      material.emissive = new THREE.Color(0x000000);
 
       mesh.position.x = Math.random() * 20 - 10;
       mesh.position.y = Math.random() * 20 - 10;
       mesh.position.z = Math.random() * 20 - 10;
 
-      scene.add(mesh);
+      scene.add(mesh, meshLight, meshLight);
     }
 
     const handleResize = () => {
