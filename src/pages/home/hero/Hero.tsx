@@ -1,8 +1,12 @@
+import arrow from "../../../../src/assets/icons/arrow-right-white.svg";
+import arrowLight from "../../../../src/assets/icons/arrow-right.svg";
+import { useTheme } from "../../../context/ThemeContext";
 import { useTranslation } from "../../../context/TranslationContext";
 import MyScene from "./MyScene";
 
 export default function Hero() {
   const { activeLang } = useTranslation();
+  const { isDarkmode } = useTheme();
 
   return (
     <section className="hero">
@@ -15,19 +19,19 @@ export default function Hero() {
               : translations.en.frontend}
           </h1>
           <h4>
-            {" "}
             {activeLang === "sv"
               ? translations.sv.subtitle
               : translations.en.subtitle}
           </h4>
-          {/*     <h5 className="hero__title hidden">
+        </div>
+        <div className="hero__lower">
+          <span>
+            <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
+
             {activeLang === "sv"
-            ? translations.sv.subtitle
-            : translations.en.subtitle}
-          </h5> */}
-          {/*       <a href="#projects" className="hidden">
-            {activeLang === "sv" ? translations.sv.work : translations.en.work}
-          </a> */}
+              ? translations.sv.interact
+              : translations.en.interact}
+          </span>
         </div>
       </div>
     </section>
@@ -38,15 +42,15 @@ const translations = {
   sv: {
     frontend: "Frontend utvecklare",
     subtitle: "Hej, jag heter Ellen Dahlgren",
-
-    /*     work: "Titta på mina projekt",
-     */
+    about: "Om mig",
+    interact: "Dra muspekaren över kloten för att rotera",
+    contact: "Kontakt",
   },
   en: {
     frontend: "Front end developer",
     subtitle: "Hello, I'm Ellen Dahlgren",
-
-    /*     work: "See some of my work",
-     */
+    about: "About",
+    interact: "Drag the mouse pointer over the globe to rotate",
+    contact: "Contact",
   },
 };

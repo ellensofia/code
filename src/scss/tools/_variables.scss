@@ -2,7 +2,7 @@
 
 /* Global Variables */
 :root {
-  --section-gap: 14rem;
+  --section-gap: 16rem;
   --section-inner-gap: calc(var(--section-gap) * 0.75); // 144px
   --section-inner-gap-small: calc(var(--section-gap) * 0.5); // 96px
   --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25); // 48px
@@ -39,7 +39,7 @@
 
   // Colors
   --color-primary: #0d0d0d;
-  --color-grey: #9f9f9f;
+  --color-grey: #8d8d8d;
   --color-bg: #f7f7f7;
 }
 
@@ -48,6 +48,7 @@ html.darkmode {
   --color-primary: rgb(209, 215, 219);
   --color-grey: rgb(137, 137, 137);
   --color-bg: #151515;
+  cursor: url("../../assets/images/apple-ipad.png");
 }
 
 p,

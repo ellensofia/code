@@ -589,12 +589,28 @@ section {
   width: 100%;
   height: 100dvh;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 .hero__copy {
   max-width: 85vw;
   font-weight: 100;
   display: flex;
+  transform: translateY(85%);
+}
+.hero__lower {
+  display: flex;
+  justify-content: flex-end;
+}
+.hero__lower span {
+  padding-bottom: 4rem;
+  display: flex;
+  gap: 1rem;
+  color: var(--color-grey);
+}
+.hero__lower img {
+  transform: rotate(-135deg);
+  opacity: 0.5;
+  padding-left: 4px;
 }
 .hero__icon-down {
   width: 4.7rem;
@@ -617,7 +633,7 @@ section {
   z-index: 1200;
 }
 .hero h4 {
-  max-width: 320px;
+  max-width: 230px;
   padding-top: 2.5rem;
 }
 @media screen and (max-width: 60em) {
@@ -665,7 +681,7 @@ section {
   width: 25vw;
   height: auto;
   object-fit: contain;
-  max-width: 30rem;
+  max-width: 250px;
   min-width: 15rem;
   margin-bottom: var(--section-inner-gap-small);
   border-radius: 50%;
@@ -934,7 +950,7 @@ section {
 
 /* Global Variables */
 :root {
-  --section-gap: 14rem;
+  --section-gap: 16rem;
   --section-inner-gap: calc(var(--section-gap) * 0.75);
   --section-inner-gap-small: calc(var(--section-gap) * 0.5);
   --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25);
@@ -965,7 +981,7 @@ section {
   --font-size-6: calc(var(--font-size-5) * var(--font-scale));
   --font-size-hero: calc(var(--font-size-6) * var(--font-scale));
   --color-primary: #0d0d0d;
-  --color-grey: #9f9f9f;
+  --color-grey: #8d8d8d;
   --color-bg: #f7f7f7;
 }
 
@@ -973,6 +989,7 @@ html.darkmode {
   --color-primary: rgb(209, 215, 219);
   --color-grey: rgb(137, 137, 137);
   --color-bg: #151515;
+  cursor: url("../../assets/images/apple-ipad.png");
 }
 
 p,
@@ -1023,6 +1040,7 @@ h6 {
 .programming p {
   font-size: var(--font-size-2);
   color: var(--color-grey);
+  font-weight: 100;
 }
 .programming p:first-of-type  {
   transform: translateY(-120px);

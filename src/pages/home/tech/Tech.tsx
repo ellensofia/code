@@ -32,14 +32,13 @@ export default function Tech() {
           <div className="hidden programming__column-1 programming__column">
             {tech &&
               tech.map((item, i) => (
-                <div>
+                <div key={i}>
                   <p
                     className={
                       item.class.length > 0
                         ? "hidden programming__item " + item.class
                         : "hidden programming__item"
                     }
-                    key={i}
                   >
                     {item.value}
                   </p>
