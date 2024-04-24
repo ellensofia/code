@@ -79,6 +79,7 @@ canvas {
   z-index: 80;
   position: absolute;
   top: 0;
+  overflow: scroll;
 }
 
 * {
@@ -601,12 +602,16 @@ section {
 .hero__lower {
   display: flex;
   align-self: flex-end;
+  padding-bottom: 2rem;
 }
 .hero__lower span {
   padding-bottom: 4rem;
   display: flex;
   gap: 1rem;
   color: var(--color-grey);
+}
+.hero__lower .arrow__down {
+  transform: rotate(90deg);
 }
 .hero__lower img {
   transform: rotate(-135deg);
@@ -618,7 +623,11 @@ section {
   height: 4.7rem;
   opacity: 0.6;
   padding: 0.6rem;
+  border-radius: 50%;
+  transform: rotate(-95deg);
+  border: 2px solid var(--color-grey);
   transition: all 0.2s linear 0.05s;
+  background: none !important;
 }
 .hero__icon-down:hover {
   opacity: 1;
@@ -635,12 +644,8 @@ section {
 }
 .hero h4 {
   max-width: 230px;
-  padding-top: 2.5rem;
 }
 @media screen and (max-width: 60em) {
-  .hero h4 {
-    padding-bottom: var(--section-inner-gap-xsmall);
-  }
   .hero__copy {
     max-width: 100vw;
     flex-direction: column-reverse;
@@ -693,7 +698,7 @@ section {
   text-align: justify;
 }
 .about p:first-of-type {
-  padding-bottom: var(--section-inner-gap-xsmall);
+  padding-bottom: calc(var(--section-inner-gap-xsmall) / 2);
 }
 .about__title {
   margin: 0 0 2rem 0;

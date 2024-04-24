@@ -18,26 +18,34 @@
   &__inner {
     width: 100%;
     height: 100dvh;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   &__copy {
     max-width: 85vw;
     font-weight: 100;
     display: flex;
-    transform: translateY(85%);
+    justify-content: space-between;
+    margin: auto;
   }
 
   &__lower {
     display: flex;
-    justify-content: flex-end;
+    align-self: flex-end;
+    padding-bottom: 2rem;
 
     span {
       padding-bottom: 4rem;
       display: flex;
       gap: 1rem;
       color: var(--color-grey);
+    }
+
+    .arrow {
+      &__down {
+        transform: rotate(90deg);
+      }
     }
 
     img {
@@ -52,7 +60,11 @@
     height: 4.7rem;
     opacity: 0.6;
     padding: 0.6rem;
+    border-radius: 50%;
+    transform: rotate(-95deg);
+    border: 2px solid var(--color-grey);
     transition: all 0.2s linear 0.05s;
+    background: none !important;
 
     &:hover {
       opacity: 1;
@@ -72,12 +84,12 @@
 
   h4 {
     max-width: 230px;
-    padding-top: 2.5rem;
+    //padding-top: 2.5rem;
   }
 
   @include responsive.max(60em) {
     h4 {
-      padding-bottom: var(--section-inner-gap-xsmall);
+      //padding-bottom: var(--section-inner-gap-xsmall);
     }
 
     &__copy {

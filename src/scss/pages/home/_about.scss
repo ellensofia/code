@@ -29,7 +29,7 @@
   }
 
   p:first-of-type {
-    padding-bottom: var(--section-inner-gap-xsmall);
+    padding-bottom: calc(var(--section-inner-gap-xsmall) / 2);
   }
 
   &__title {
