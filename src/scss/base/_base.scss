@@ -82,6 +82,7 @@ canvas {
   position: absolute;
   top: 0;
   overflow: scroll;
+  touch-action: auto !important;
 }
 
 * {

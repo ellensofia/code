@@ -64,7 +64,6 @@
     transform: rotate(-95deg);
     border: 2px solid var(--color-grey);
     transition: all 0.2s linear 0.05s;
-    background: none !important;
 
     &:hover {
       opacity: 1;
@@ -80,6 +79,13 @@
 
   a {
     z-index: 1200;
+    &:hover {
+      transition: all 0.2s linear 0.05s;
+      transform: translateY(10px);
+      -moz-animation: bounce 2s infinite;
+      -webkit-animation: bounce 2s infinite;
+      animation: bounce 2s infinite;
+    }
   }
 
   h4 {
@@ -107,6 +113,12 @@
     h1 {
       margin-top: 1.6rem;
       font-size: clamp(3.2rem, 18dvw, 10rem);
+    }
+  }
+
+  @media (max-width: 600px) {
+    canvas {
+      z-index: 1;
     }
   }
 }

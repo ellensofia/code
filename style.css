@@ -80,6 +80,7 @@ canvas {
   position: absolute;
   top: 0;
   overflow: scroll;
+  touch-action: auto !important;
 }
 
 * {
@@ -425,7 +426,7 @@ section {
 .menu__link::after, .menu__link::before {
   content: "";
   position: absolute;
-  height: 0.02em;
+  height: 0.03em;
   width: 100%;
   bottom: -3px;
   left: 0;
@@ -627,7 +628,6 @@ section {
   transform: rotate(-95deg);
   border: 2px solid var(--color-grey);
   transition: all 0.2s linear 0.05s;
-  background: none !important;
 }
 .hero__icon-down:hover {
   opacity: 1;
@@ -641,6 +641,13 @@ section {
 }
 .hero a {
   z-index: 1200;
+}
+.hero a:hover {
+  transition: all 0.2s linear 0.05s;
+  transform: translateY(10px);
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 .hero h4 {
   max-width: 230px;
@@ -659,6 +666,11 @@ section {
   .hero h1 {
     margin-top: 1.6rem;
     font-size: clamp(3.2rem, 18dvw, 10rem);
+  }
+}
+@media (max-width: 600px) {
+  .hero canvas {
+    z-index: 1;
   }
 }
 
@@ -893,11 +905,12 @@ section {
   transition: 0.5s ease;
   font-weight: 100;
   opacity: 0.9;
+  opacity: 0.8;
 }
 .contact__link::after, .contact__link::before {
   content: "";
   position: absolute;
-  height: 0.02em;
+  height: 0.03em;
   width: 100%;
   bottom: -3px;
   left: 0;
@@ -957,9 +970,10 @@ section {
 /* Global Variables */
 :root {
   --section-gap: 16rem;
-  --section-inner-gap: calc(var(--section-gap) * 0.75);
-  --section-inner-gap-small: calc(var(--section-gap) * 0.5);
-  --section-inner-gap-xsmall: calc(var(--section-gap) * 0.25);
+  --section-gap-to-scale: 14rem;
+  --section-inner-gap: calc(var(--section-gap-to-scale) * 0.75);
+  --section-inner-gap-small: calc(var(--section-gap-to-scale) * 0.5);
+  --section-inner-gap-xsmall: calc(var(--section-gap-to-scale) * 0.25);
   --grid-container-projects: minmax(10rem, 1fr) [inner-start] minmax(0, 190rem)
     [inner-end] minmax(12rem, 1fr);
   --grid-container-projects-small: minmax(3rem, 1fr) [inner-start]
@@ -1036,7 +1050,7 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   line-height: 1.5;
-  gap: 2rem;
+  row-gap: 2rem;
   max-width: 650px;
 }
 .programming__title {
@@ -1047,6 +1061,7 @@ h6 {
   font-size: var(--font-size-2);
   color: var(--color-grey);
   font-weight: 100;
+  padding: 0 1rem;
 }
 .programming p:first-of-type  {
   transform: translateY(-120px);
