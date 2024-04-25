@@ -134,13 +134,13 @@ export default function Projects() {
                   </span>
                   <div className="flex">
                     <a
-                      href="https://papaya-lamington-fca010.netlify.app/"
+                      href="https://oasis-webshop.netlify.app/"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
                       <span className="project__link1">Demo</span>
                     </a>
                     <a
-                      href="https://github.com/ellensofia/food-finder"
+                      href="https://github.com/ellensofia/e-commerce"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
                       <img
