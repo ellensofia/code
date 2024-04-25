@@ -83,7 +83,7 @@ export default function Projects() {
                 </div>
                 <div className="project__lower">
                   <span className="project__tools">
-                    HTML | CSS | Javascript
+                    Typescript | React | Styled components
                   </span>
                   <div className="flex">
                     <a
@@ -129,7 +129,9 @@ export default function Projects() {
                   </p>
                 </div>
                 <div className="project__lower">
-                  <span className="project__tools">Typescript | React</span>
+                  <span className="project__tools">
+                    Typescript | React | Styled components
+                  </span>
                   <div className="flex">
                     <a
                       href="https://papaya-lamington-fca010.netlify.app/"
@@ -310,7 +312,7 @@ const translations = {
     project1:
       "Detta är en webshop som jag byggt tillsammans med två klasskamrater. Vi använde oss av React, Typescript och MUI för att skapa gränssnitt för användare och admin.",
     project2:
-      "Oasis E-Shop är en skoluppgift. Uppgiften var att skapa ett fiktivt märke med en grafisk profil och utveckla en e-handel med minst två produkter. Projektet är byggt med React, Typescript och Styled Components.",
+      "Oasis E-Shop är en skoluppgift. Uppgiften var att skapa ett fiktivt märke med en grafisk profil och utveckla en e-handel med minst två produkter.",
     project2Title: "Oasis hudvård",
     project3:
       "Food-finder är en React-app som skapats i grupp. Appen hjälper användaren att hitta recept baserat på vilka ingredienser de har hemma.",
@@ -326,7 +328,7 @@ const translations = {
     project1:
       "This is a webshop that I built with two classmates. We used React, Typescript and MUI to create an interface for both user and admin.",
     project2:
-      "Oasis E-Shop is a school project. The assignment required the creation of a fictitious brand with a graphic profile and the development of an online store to sell a minimum of two products or services. The project was built using React, TypeScript, and Styled Components.",
+      "Oasis E-Shop is a school project. The assignment was to create of a fictitious brand with a graphic profile and the develop an online store to sell a minimum of two products/services.",
     project2Title: "Oasis skincare",
     project3:
       "Food-finder is a React app created as a team assignment. The app helps the user find recipes based on what ingredients they have at home.",
