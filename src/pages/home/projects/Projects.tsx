@@ -15,7 +15,6 @@ import pieceBypiecephone from "./../../../assets/images/piece-by-piece-phone.png
 import pieceBypiece from "./../../../assets/images/piece-by-piece.png";
 
 import { useState } from "react";
-import githubIcon from "../../../assets/icons/github.svg";
 import { useTranslation } from "../../../context/TranslationContext";
 
 export default function Projects() {
@@ -96,7 +95,7 @@ export default function Projects() {
                       href="https://github.com/ellensofia/portfolio-web-agency"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
-                      <img src={githubIcon} alt="" className="github-icon" />
+                      Code
                     </a>
                   </div>
                 </div>
@@ -143,11 +142,7 @@ export default function Projects() {
                       href="https://github.com/ellensofia/e-commerce"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
-                      <img
-                        src={githubIcon}
-                        alt="github icon"
-                        className="github-icon"
-                      />
+                      Code
                     </a>
                   </div>
                 </div>
@@ -197,7 +192,7 @@ export default function Projects() {
                       href="https://github.com/ellensofia/webshop-piece-by-piece"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
-                      <img src={githubIcon} alt="" className="github-icon" />
+                      Code
                     </a>
                   </div>
                 </div>
@@ -246,11 +241,7 @@ export default function Projects() {
                       href="https://github.com/ellensofia/food-finder"
                       tabIndex={!isProjectOpen ? 0 : -1}
                     >
-                      <img
-                        src={githubIcon}
-                        alt="github icon"
-                        className="github-icon"
-                      />
+                      Code
                     </a>
                   </div>
                 </div>
@@ -292,8 +283,7 @@ export default function Projects() {
                     href="https://github.com/ellensofia/take-n-bake-game"
                     tabIndex={!isProjectOpen ? 0 : -1}
                   >
-                    <span className="project__link1">Source code</span>
-                    <img src={githubIcon} alt="" className="github-icon" />
+                    <span className="project__link1">Code</span>
                   </a>
                 </div>
               </div>
@@ -320,7 +310,6 @@ const translations = {
       "Sidan är gjort för en fiktiv webbyrå. Detta var ett gruppprojekt där vi arbetade med scrum. Projektet är gjort i React, TypeScript och Styled Components.",
     project5:
       "Detta är ett spel som är skapat med p5 och Javascript och koden är strukturerad på ett objektorienterat sätt. Vi arbetade i grupp och tog fram design och idé tillsammans. Spelet kan tyvärr bara visas i fullscreen på desktop.",
-    story: "hejhej",
   },
   en: {
     projects: "Projects",
@@ -336,6 +325,5 @@ const translations = {
       "The page is made for a fictitious web agency. This was a group project where we worked with scrum. The project is made in React, TypeScript and Styled Components.",
     project5:
       "This is a game created with p5 and Javascript and the code is structured in an object oriented way. We worked as a group and came up with the design and idea together. The game can only be displayed in full screen on desktop.",
-    story: "hellohello",
   },
 };
