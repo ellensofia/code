@@ -42,7 +42,14 @@ export default function Hero() {
           </h4>
         </div>
         <div className="hero__lower hidden">
-          {!isMobile && (
+          {isMobile ? (
+            <a href="#about">
+              <img
+                className="arrow__down"
+                src={isDarkmode ? arrow : arrowLight}
+              />
+            </a>
+          ) : (
             <span>
               <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
 
