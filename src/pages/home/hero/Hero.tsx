@@ -69,14 +69,14 @@ const translations = {
     frontend: "Frontend utvecklare",
     subtitle: "Hej, jag heter Ellen Dahlgren",
     about: "Om mig",
-    interact: "Dra muspekaren över kloten för att rotera",
+    interact: "Klicka och dra muspekaren över kloten för att rotera",
     contact: "Kontakt",
   },
   en: {
     frontend: "Front end developer",
     subtitle: "Hello, I'm Ellen Dahlgren",
     about: "About",
-    interact: "Drag the mouse pointer over the globe to rotate",
+    interact: "Tap and drag the mouse pointer over the globe to rotate",
     contact: "Contact",
   },
 };
