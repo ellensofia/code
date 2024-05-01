@@ -41,14 +41,14 @@ const translations = {
   sv: {
     about: "Om mig",
     story:
-      "Snart utexad frontend student med passion för UI-design. I maj blir jag klar med utbildningen front end developer på Medieinstitutet. Som en del av utbildningen kommer jag att ha genomfört en sexmånaders praktik på Handelsbanken där jag främst har jobbat med React och TypeScript. Sedan innan har jag en ettårig utbildning i webbdesign och webbutveckling på Karlskoga folkhögskola. Jag har alltid varit kreativt lagd och har tidigare sysslat mycket med konst och haft några utställningar. Sedan jag funnit webbdesign har jag hittat ett nytt kreativt utlopp som jag tycker är otroligt givande. ",
+      "Snart utexad frontend student med passion för UI-design. I maj blir jag klar med utbildningen front end developer på Medieinstitutet. Som en del av utbildningen kommer jag att ha genomfört en sexmånaders praktik på Handelsbanken där jag främst har jobbat med React och TypeScript.  ",
     story2:
       "Tidigare har jag arbetat inom vården, på äldreboenden och som personlig assistent men ville hitta ett yrke som utmanar min kreativa sida. Som person är jag nyfiken och driven. Jag trivs bäst när jag får arbeta i team där man kan kombinera olika perspektiv för att få fram det bästa resultatet.",
   },
   en: {
     about: "About me",
     story:
-      "I'm a soon-to-be frontend graduate with a passion for UI design. In May I will finish my front end developer education at the Media Institute. As a part of my education I will have completed a six-month internship at Handelsbanken where I maily worked with React and TypeScript. Prior to this I completed a one-year program in web design and web development at Karlskoga Folkhögskola. I have always been creative and have previously created art and had a few exhibitions. Since finding web design I have found a new creative outlet which I find incredibly rewarding. ",
+      "I'm a soon-to-be frontend graduate with a passion for UI design. In May I will finish my front end developer education at the Media Institute. As a part of my education I will have completed a six-month internship at Handelsbanken where I maily worked with React and TypeScript. ",
     story2:
       "I used to work in healthcare, at nursing homes and as a personal assistant but wanted to find a career that challenged my creative side. As a person I am very curious and driven. I enjoy working in teams and combining different perspectives to create the best end-product.",
   },
