@@ -35,11 +35,14 @@ export default function Hero() {
               ? translations.sv.frontend
               : translations.en.frontend}
           </h1>
-          <h4 className="hidden">
-            {activeLang === "sv"
-              ? translations.sv.subtitle
-              : translations.en.subtitle}
-          </h4>
+          <div>
+            <h4 className="hidden">
+              {activeLang === "sv"
+                ? translations.sv.subtitle
+                : translations.en.subtitle}
+            </h4>
+            <h4 className="hidden">Ellen Dahlgren</h4>
+          </div>
         </div>
         <div className="hero__lower hidden">
           {isMobile ? (
@@ -67,16 +70,16 @@ export default function Hero() {
 const translations = {
   sv: {
     frontend: "Frontend utvecklare",
-    subtitle: "Hej, jag heter Ellen Dahlgren",
+    subtitle: "Hej, jag heter ",
     about: "Om mig",
-    interact: "Klicka och dra muspekaren över kloten för att rotera",
+    interact: "Klicka och dra i kloten för att rotera",
     contact: "Kontakt",
   },
   en: {
     frontend: "Front end developer",
-    subtitle: "Hello, I'm Ellen Dahlgren",
+    subtitle: "Hello, I'm ",
     about: "About",
-    interact: "Tap and drag the mouse pointer over the globe to rotate",
+    interact: "Tap and drag the the globes to rotate",
     contact: "Contact",
   },
 };

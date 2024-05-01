@@ -21,6 +21,11 @@
   &__title {
     max-width: 50vw;
     width: 700px;
+    &:nth-of-type(2) {
+      white-space: nowrap;
+      margin-bottom: var(--section-inner-gap-small);
+      margin-top: 1rem;
+    }
   }
 
   p {
@@ -46,10 +51,6 @@
     flex-direction: column;
   }
 
-  &__title {
-    margin-bottom: var(--section-inner-gap-small);
-  }
-
   &__text {
     margin-bottom: var(--section-inner-gap-xsmall);
   }
@@ -71,7 +72,11 @@
     }
     h2 {
       font-size: var(--font-size-3);
-      margin-bottom: var(--section-inner-gap-xsmall);
+
+      &:nth-child(2) {
+        margin-bottom: var(--section-inner-gap-xsmall);
+        margin-top: 0.5rem;
+      }
     }
   }
 }

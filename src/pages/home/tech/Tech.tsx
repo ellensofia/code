@@ -27,6 +27,12 @@ export default function Tech() {
         <h2 className="hidden programming__title">
           {activeLang === "sv" ? translations.sv.title : translations.en.title}
         </h2>
+        <h2 className="hidden programming__title">
+          {activeLang === "sv"
+            ? translations.sv.design
+            : translations.en.design}
+        </h2>
+
         <div className="hidden programming__columns">
           <div className="hidden programming__column-1 programming__column">
             {tech &&
@@ -52,9 +58,11 @@ export default function Tech() {
 
 const translations = {
   sv: {
-    title: "Programmering & designverktyg",
+    title: "Programmering &",
+    design: "designverktyg",
   },
   en: {
-    title: "Programing & design tools",
+    title: "Programing &",
+    design: "design tools",
   },
 };
