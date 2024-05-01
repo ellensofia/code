@@ -70,9 +70,9 @@ export default function Scene() {
     materialLit.transmission = 1;
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = isMobile ? false : true;
+    controls.enabled = isMobile ? false : true;
     controls.enableZoom = false;
     controls.enableRotate = true;
-    controls.enabled = isMobile ? false : true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
 
@@ -98,6 +98,8 @@ export default function Scene() {
       // update sizes
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
+      setIsMobile(window.innerWidth <= 600);
+      geometry = new THREE.SphereGeometry(3, 64, 64);
 
       // update camera
       camera.aspect = sizes.width / sizes.height;
@@ -120,5 +122,5 @@ export default function Scene() {
     };
   }, [isDarkmode, isMobile]);
 
-  return <canvas ref={canvasRef} className="webgl" />;
+  return <canvas ref={canvasRef} />;
 }
