@@ -1067,9 +1067,9 @@ h6 {
 .programming__title {
   max-width: 50vw;
   width: 700px;
+  white-space: nowrap;
 }
 .programming__title:nth-of-type(2) {
-  white-space: nowrap;
   margin-bottom: var(--section-inner-gap-small);
   margin-top: 1rem;
 }
