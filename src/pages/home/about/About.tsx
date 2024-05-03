@@ -1,7 +1,10 @@
+import imageDark from "../../../assets/images/portrait-bw-dark.jpeg";
 import image from "../../../assets/images/portrait-bw.jpeg";
+import { useTheme } from "../../../context/ThemeContext";
 import { useTranslation } from "../../../context/TranslationContext";
 export default function About() {
   const { activeLang } = useTranslation();
+  const { isDarkmode } = useTheme();
 
   return (
     <>
@@ -10,7 +13,7 @@ export default function About() {
       <section className="about">
         <div className="about__inner">
           <img
-            src={image}
+            src={isDarkmode ? imageDark : image}
             alt="portrait of Ellen Dahlgren"
             className="about__img hidden"
           />
