@@ -13,10 +13,10 @@
   }
 
   &__img {
-    width: 25vw;
+    width: 20vw;
     height: auto;
     object-fit: contain;
-    max-width: 250px;
+    max-width: 220px;
     min-width: 15rem;
     margin-bottom: var(--section-inner-gap-xsmall);
     border-radius: 50%;
@@ -54,7 +54,6 @@
 
     &__img {
       width: auto;
-      max-width: 225px;
     }
   }
 
