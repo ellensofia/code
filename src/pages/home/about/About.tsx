@@ -1,4 +1,4 @@
-import image from "../../../assets/images/portrait.jpeg";
+import image from "../../../assets/images/portrait-bw.jpeg";
 import { useTranslation } from "../../../context/TranslationContext";
 export default function About() {
   const { activeLang } = useTranslation();
