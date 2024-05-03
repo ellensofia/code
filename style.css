@@ -426,7 +426,7 @@ section {
 .menu__link::after, .menu__link::before {
   content: "";
   position: absolute;
-  height: 0.03em;
+  height: 0.023em;
   width: 100%;
   bottom: -3px;
   left: 0;
@@ -436,7 +436,7 @@ section {
 }
 .menu__link::after {
   width: 0;
-  height: 0.03em;
+  height: 0.05em;
 }
 .menu__link::before {
   background-color: var(--color-grey);
@@ -447,7 +447,7 @@ section {
 .menu__link:hover::after, .menu__link:focus::after {
   transform: scaleX(1);
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
 }
 .menu__btn {
   z-index: 100;
@@ -921,7 +921,7 @@ section {
 .contact__link::after, .contact__link::before {
   content: "";
   position: absolute;
-  height: 0.03em;
+  height: 0.023em;
   width: 100%;
   bottom: -3px;
   left: 0;
@@ -931,7 +931,7 @@ section {
 }
 .contact__link::after {
   width: 0;
-  height: 0.03em;
+  height: 0.05em;
 }
 .contact__link::before {
   background-color: var(--color-grey);
@@ -942,7 +942,7 @@ section {
 .contact__link:hover::after, .contact__link:focus::after {
   transform: scaleX(1);
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
 }
 .contact__link::before {
   content: "";
