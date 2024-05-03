@@ -32,8 +32,8 @@ export default function Scene() {
 
     const materialShadow = new THREE.MeshStandardMaterial({
       color: 0xffffff,
-      roughness: 2,
-      metalness: 0.9,
+      roughness: 0.9,
+      metalness: 1,
       transparent: true,
       opacity: isDarkmode ? 0.2 : 0.8,
     });
@@ -42,7 +42,7 @@ export default function Scene() {
     scene.add(meshLight);
 
     const smallLight = new THREE.PointLight(0xffffff, 200, 100);
-    smallLight.position.set(6, 10, 1);
+    smallLight.position.set(19, 8, 20);
     scene.add(smallLight);
 
     const sizes = {
@@ -99,7 +99,6 @@ export default function Scene() {
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
       setIsMobile(window.innerWidth <= 600);
-      geometry = new THREE.SphereGeometry(3, 64, 64);
 
       // update camera
       camera.aspect = sizes.width / sizes.height;
