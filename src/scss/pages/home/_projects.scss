@@ -2,7 +2,7 @@
 
 .projects {
   &__container {
-    gap: var(--section-inner-gap-xsmall);
+    gap: calc(var(--section-inner-gap-xsmall) / 2);
     display: flex;
     overflow-x: scroll;
     cursor: pointer;
