@@ -3,23 +3,23 @@ import { useTranslation } from "../../../context/TranslationContext";
 export default function Tech() {
   const { activeLang } = useTranslation();
   const tech = [
-    { value: "HTML", class: "underline" },
-    { value: "CSS", class: "underline" },
-    { value: "Typescript", class: "underline" },
-    { value: "React", class: "underline" },
+    { value: "HTML", class: "" },
+    { value: "CSS", class: "" },
+    { value: "Typescript", class: "" },
+    { value: "React", class: "" },
     { value: "Sanity", class: "" },
-    { value: "Sass/Scss", class: "underline" },
-    { value: "Emotion", class: "underline" },
+    { value: "Sass/Scss", class: "" },
+    { value: "Emotion", class: "" },
     { value: "Wordpress", class: "" },
     { value: "Node.js", class: "" },
     { value: "Next.js", class: "" },
-    { value: "Javascript", class: "underline" },
+    { value: "Javascript", class: "" },
     { value: "Mongo DB", class: "" },
     { value: "Mongoose", class: "" },
-    { value: "XD", class: "underline" },
+    { value: "XD", class: "" },
     { value: "Illustrator", class: "" },
-    { value: "Figma", class: "underline" },
-    { value: "Git", class: "underline" },
+    { value: "Figma", class: "" },
+    { value: "Git", class: "" },
   ];
   return (
     <div className="programming">
@@ -33,23 +33,20 @@ export default function Tech() {
             : translations.en.design}
         </h2>
 
-        <div className="hidden programming__columns">
-          <div className="hidden programming__column-1 programming__column">
-            {tech &&
-              tech.map((item, i) => (
-                <div key={i}>
-                  <p
-                    className={
-                      item.class.length > 0
-                        ? "hidden programming__item " + item.class
-                        : "hidden programming__item"
-                    }
-                  >
-                    {item.value}
-                  </p>
-                </div>
-              ))}
-          </div>
+        <div className="hidden programming__column">
+          {tech &&
+            tech.map((item, i) => (
+              <p
+                key={i}
+                className={
+                  item.class.length > 0
+                    ? "hidden programming__item " + item.class
+                    : "hidden programming__item"
+                }
+              >
+                {item.value}
+              </p>
+            ))}
         </div>
       </div>
     </div>
