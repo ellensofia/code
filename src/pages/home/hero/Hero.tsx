@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import arrow from "../../../../src/assets/icons/arrow-right-white.svg";
 import arrowLight from "../../../../src/assets/icons/arrow-right.svg";
 import { useTheme } from "../../../context/ThemeContext";
@@ -9,6 +10,18 @@ export default function Hero() {
   const { activeLang } = useTranslation();
   const { isDarkmode } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
+  const controls = useAnimation();
+  const container = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    margin: "-200px 0px 0px 0px",
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, ref, controls]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" ref={container}>
       <MyScene />
       <div className="hero__inner">
         <div className="hero__copy">
@@ -44,14 +57,21 @@ export default function Hero() {
             <h4 className="hidden">Ellen Dahlgren</h4>
           </div>
         </div>
-        <div className="hero__lower hidden">
+        <motion.div
+          className="hero__lower hidden"
+          animate={controls}
+          variants={animate}
+          ref={ref}
+        >
           {isMobile ? (
-            <a href="#about">
-              <img
-                className="arrow__down"
-                src={isDarkmode ? arrow : arrowLight}
-              />
-            </a>
+            isInView && (
+              <a href="#about">
+                <img
+                  className="arrow__down"
+                  src={isDarkmode ? arrow : arrowLight}
+                />
+              </a>
+            )
           ) : (
             <span>
               <img className="arrow" src={isDarkmode ? arrow : arrowLight} />
@@ -61,12 +81,16 @@ export default function Hero() {
                 : translations.en.interact}
             </span>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
+const animate = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  hidden: { opacity: 0.7, scale: 0.5 },
+};
 const translations = {
   sv: {
     frontend: "Frontend utvecklare",

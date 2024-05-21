@@ -213,20 +213,24 @@ ul {
 .hero__copy h4 {
   transition-delay: 0.6s;
 }
-.hero__copy span {
-  transition-delay: 1.15s;
-}
+.hero__copy span,
 .hero__copy a {
   transition-delay: 1.15s;
 }
-
-.hero__lower.show span,
-.hero__lower.show a {
-  transform: translateX(0px);
+.hero__copy a {
+  transition-delay: 1.25s;
 }
 
 .hero__lower.hidden {
   transform: translateX(100px);
+}
+
+.hero__lower.show {
+  transform: translateX(0px);
+}
+.hero__lower.show span,
+.hero__lower.show a {
+  transform: translateX(0px);
 }
 
 .arrow__down.hidden {
