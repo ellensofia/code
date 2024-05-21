@@ -40,11 +40,13 @@
       display: flex;
       gap: 1rem;
       color: var(--color-grey);
+      transform: translateX(400px);
     }
 
     .arrow {
       &__down {
         transform: rotate(90deg);
+        padding: 4rem 2rem;
       }
     }
 
