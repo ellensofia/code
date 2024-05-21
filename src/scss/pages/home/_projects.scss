@@ -93,7 +93,7 @@
     h5,
     a,
     span {
-      color: var(--color-dark);
+      color: var(--color-dark) !important;
     }
 
     @include responsive.max(870px) {

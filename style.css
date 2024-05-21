@@ -861,7 +861,7 @@ section {
 .projects .project h5,
 .projects .project a,
 .projects .project span {
-  color: var(--color-dark);
+  color: var(--color-dark) !important;
 }
 @media screen and (max-width: 870px) {
   .projects .project__img {
