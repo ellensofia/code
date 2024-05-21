@@ -9,11 +9,9 @@
   //font-family: roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,8 +25,9 @@ html {
 
 body {
   margin: 0;
-  min-height: 100dvh;
   background-color: var(--color-bg);
+  z-index: 10;
+  position: relative;
 }
 
 h1,
@@ -80,8 +79,6 @@ canvas {
   cursor: pointer;
   z-index: 80;
   position: absolute;
-  top: 0;
-  overflow: scroll;
   touch-action: auto !important;
 }
 
@@ -109,4 +106,8 @@ canvas {
   border-radius: 50px;
   pointer-events: none;
   z-index: 1;
+}
+
+.cursor {
+  transition: 0.9s 0.5s ease-in;
 }

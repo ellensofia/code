@@ -25,8 +25,9 @@ html {
 
 body {
   margin: 0;
-  min-height: 100dvh;
   background-color: var(--color-bg);
+  z-index: 10;
+  position: relative;
 }
 
 h1,
@@ -78,8 +79,6 @@ canvas {
   cursor: pointer;
   z-index: 80;
   position: absolute;
-  top: 0;
-  overflow: scroll;
   touch-action: auto !important;
 }
 
@@ -107,6 +106,10 @@ canvas {
   z-index: 1;
 }
 
+.cursor {
+  transition: 0.9s 0.5s ease-in;
+}
+
 body {
   font-family: var(--font-sans);
 }
@@ -116,7 +119,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+div {
   color: var(--color-primary);
   margin: 0;
 }
@@ -185,37 +189,38 @@ ul {
   }
 }
 .hidden {
-  transition: 0.4s ease-in;
+  transition: 0.4s ease-in-out;
   transition-property: opacity, transform;
   opacity: 0;
   filter: blur(0.2rem);
+  transform: translateY(50px);
 }
-
 @media (prefers-reduced-motion) {
   .hidden {
     transition: none;
   }
 }
+
 .show {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-.hero__copy h4 {
-  transition-delay: 0s;
-}
-.hero__copy h1:first-of-type {
-  transition-delay: 0.1s;
-}
-.hero__copy h1:last-of-type {
+.hero__copy h1 {
   transition-delay: 0.2s;
 }
-.hero__copy h2 {
-  transition-delay: 0.3s;
+.hero__copy h4:first-of-type {
+  transition-delay: 0.35s;
+}
+.hero__copy h4:last-of-type {
+  transition-delay: 0.5s;
+}
+.hero__copy span {
+  transition-delay: 0.65s;
 }
 .hero__copy a {
-  transition-delay: 0.4s;
+  transition-delay: 0.45s;
 }
 
 .hero__link-down.hidden {
@@ -235,6 +240,11 @@ ul {
 .programming__column:nth-of-type(3) {
   transition-delay: 0.4s;
   transition-duration: 0.4s;
+}
+@media (prefers-reduced-motion) {
+  .programming__column:nth-of-type(1), .programming__column:nth-of-type(2), .programming__column:nth-of-type(3) {
+    transition: none;
+  }
 }
 
 .hero,
@@ -420,7 +430,6 @@ section {
   transition: 0.5s ease;
   font-weight: 100;
   opacity: 0.9;
-  opacity: 0;
   white-space: nowrap;
 }
 .menu__link::after, .menu__link::before {
@@ -706,7 +715,7 @@ section {
   width: 20vw;
   height: auto;
   object-fit: contain;
-  max-width: 220px;
+  max-width: 180px;
   min-width: 15rem;
   margin-bottom: var(--section-inner-gap-xsmall);
   border-radius: 50%;
@@ -746,7 +755,7 @@ section {
 }
 @media screen and (max-width: 30em) {
   .about__img {
-    width: 48vw;
+    width: 40vw;
   }
 }
 
@@ -755,6 +764,11 @@ section {
   position: relative;
   top: -18rem;
   visibility: hidden;
+}
+@media screen and (max-width: 45em) {
+  .anchor {
+    top: -12rem;
+  }
 }
 
 .projects__container {
@@ -1125,19 +1139,18 @@ h6 {
   grid-template-columns: repeat(auto-fill, minmax(var(--grid-size), 1fr));
   grid-auto-rows: var(--grid-size);
   z-index: 1;
-  opacity: 1;
 }
 
 .grid-item {
   width: 100%;
   height: 100%;
-  border: 1px solid var(--grid-color);
+  border: 1px solid var(--color-grey);
   transition: opacity 0.2s ease-out;
 }
 
 @media screen and (max-width: 20em) {
   .grid-item {
-    border: 0.5px solid var(--grid-color);
+    border: 0.5px solid var(--color-grey);
   }
 }
 .container {

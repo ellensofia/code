@@ -55,7 +55,6 @@
 
     img {
       height: 0.8em;
-      //transform: rotate(25deg);
     }
   }
 
@@ -86,7 +85,6 @@
 
   &__link {
     @include link.standard;
-    opacity: 0;
     white-space: nowrap;
   }
 

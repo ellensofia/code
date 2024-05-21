@@ -1,58 +1,63 @@
 .hidden {
-    transition: 0.4s ease-in;
-    transition-property: opacity, transform;
-    opacity: 0;
-    filter:blur(.2rem);
-}
-
-// Gives user option to remove animation
-@media(prefers-reduced-motion) {
-    .hidden {
-        transition: none;
-    }
+  transition: 0.4s ease-in-out;
+  transition-property: opacity, transform;
+  opacity: 0;
+  filter: blur(0.2rem);
+  transform: translateY(50px);
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 }
 
 .show {
-    opacity: 1;
-    filter:blur(0);
-    transform:translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
 
 .hero__copy {
-    & h4{
-        transition-delay: 0s;
-    }
-    & h1:first-of-type{
-        transition-delay: .1s;
-    }
-    & h1:last-of-type{
-        transition-delay: .2s;
-    }
-    & h2{
-        transition-delay: .3s;
-    }
-    & a{
-        transition-delay: .4s;
-    }
+  & h1 {
+    transition-delay: 0.2s;
+  }
+  & h4:first-of-type {
+    transition-delay: 0.35s;
+  }
+  & h4:last-of-type {
+    transition-delay: 0.5s;
+  }
+  & span {
+    transition-delay: 0.65s;
+  }
+  & a {
+    transition-delay: 0.45s;
+  }
 }
 
 .hero__link-down.hidden {
-    transform: translateX(0);
-    transition-property: opacity;
-    transition-delay: .4s;
+  transform: translateX(0);
+  transition-property: opacity;
+  transition-delay: 0.4s;
 }
 
 .programming__column {
-    &:nth-of-type(1) {
-        transition-delay: 0;
-        transition-duration: .1s;
-    }
-    &:nth-of-type(2) {
-        transition-delay: .4s;
-        transition-duration: .4s;
-    }
+  &:nth-of-type(1) {
+    transition-delay: 0;
+    transition-duration: 0.1s;
+  }
+  &:nth-of-type(2) {
+    transition-delay: 0.4s;
+    transition-duration: 0.4s;
+  }
+  &:nth-of-type(3) {
+    transition-delay: 0.4s;
+    transition-duration: 0.4s;
+  }
+
+  @media (prefers-reduced-motion) {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
     &:nth-of-type(3) {
-        transition-delay: .4s;
-        transition-duration: .4s;
+      transition: none;
     }
+  }
 }

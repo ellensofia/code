@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function TextAnimation() {
+export default function TextAnimation() {
+  const [shownElements, setShownElements] = useState(new Set());
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !shownElements.has(entry.target)) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
+          const newShownElements = new Set(shownElements);
+          newShownElements.add(entry.target);
+          setShownElements(newShownElements);
         }
       });
     });
@@ -18,9 +21,7 @@ function TextAnimation() {
     return () => {
       hiddenTextElements.forEach((element) => observer.unobserve(element));
     };
-  }, []);
+  }, [shownElements]);
 
   return null;
 }
-
-export default TextAnimation;
